@@ -1,0 +1,65 @@
+# Techleap Ecosystem Data Warehouse
+# dbt Project Configuration
+
+name: 'techleap_ecosystem'
+version: '1.0.0'
+config-version: 2
+
+profile: 'techleap'
+
+# Model-level configuration
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+target-path: "target"
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+# Model configurations by folder
+models:
+  techleap_ecosystem:
+    # Staging models: 1:1 with source tables, minimal transformation
+    staging:
+      +materialized: view
+      +schema: staging
+      +tags: ['staging', 'daily']
+
+    # Mart models: Business-ready aggregates and dimensional models
+    marts:
+      +materialized: table
+      +schema: marts
+      +tags: ['marts', 'daily']
+
+      # Core dimensional tables
+      core:
+        +materialized: table
+
+      # Finance-specific aggregates
+      finance:
+        +materialized: table
+
+# Variable definitions
+vars:
+  # Default date range for incremental models
+  start_date: '2000-01-01'
+  end_date: '2030-12-31'
+
+  # Source system identifier
+  source_system: 'dealroom'
+
+  # Data quality thresholds
+  min_company_name_length: 2
+  max_funding_amount_eur: 100000000000  # 100B EUR sanity check
+
+# Testing configuration
+tests:
+  +severity: warn
+
+# Documentation
+docs:
+  +node_color: "#1a365d"
