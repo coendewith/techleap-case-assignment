@@ -1,0 +1,137 @@
+[
+  {
+    "sector": "Software",
+    "company_count": 4495,
+    "total_funding": 39972396481.0,
+    "avg_funding": 8892635.479644049,
+    "dutch_company_count": 17,
+    "dutch_total_funding": 38187266.0,
+    "dutch_avg_funding": 3471569.6363636362
+  },
+  {
+    "sector": "Biotechnology",
+    "company_count": 3648,
+    "total_funding": 71586338670.0,
+    "avg_funding": 19623448.10032895,
+    "dutch_company_count": 26,
+    "dutch_total_funding": 426105910.0,
+    "dutch_avg_funding": 28407060.666666668
+  },
+  {
+    "sector": "Mobile",
+    "company_count": 1933,
+    "total_funding": 48088450751.0,
+    "avg_funding": 24877625.841179512,
+    "dutch_company_count": 7,
+    "dutch_total_funding": 68037298.0,
+    "dutch_avg_funding": 9719614.0
+  },
+  {
+    "sector": "E-Commerce",
+    "company_count": 1767,
+    "total_funding": 20124708368.0,
+    "avg_funding": 11389195.454442559,
+    "dutch_company_count": 6,
+    "dutch_total_funding": 18774203.0,
+    "dutch_avg_funding": 4693550.75
+  },
+  {
+    "sector": "Curated Web",
+    "company_count": 1611,
+    "total_funding": 8859784030.0,
+    "avg_funding": 5499555.57417753,
+    "dutch_company_count": 7,
+    "dutch_total_funding": 3579868.0,
+    "dutch_avg_funding": 894967.0
+  },
+  {
+    "sector": "Enterprise Software",
+    "company_count": 1238,
+    "total_funding": 18338053316.0,
+    "avg_funding": 14812644.035541195,
+    "dutch_company_count": 8,
+    "dutch_total_funding": 1416449112.0,
+    "dutch_avg_funding": 202349873.14285713
+  },
+  {
+    "sector": "Clean Technology",
+    "company_count": 1191,
+    "total_funding": 36776804519.0,
+    "avg_funding": 30878929.067170445,
+    "dutch_company_count": 11,
+    "dutch_total_funding": 178198327.0,
+    "dutch_avg_funding": 17819832.7
+  },
+  {
+    "sector": "Health Care",
+    "company_count": 1188,
+    "total_funding": 28314718595.0,
+    "avg_funding": 23833938.211279463,
+    "dutch_company_count": 7,
+    "dutch_total_funding": 619489200.0,
+    "dutch_avg_funding": 123897840.0
+  },
+  {
+    "sector": "Games",
+    "company_count": 1149,
+    "total_funding": 8765366844.0,
+    "avg_funding": 7628691.770234987,
+    "dutch_company_count": 9,
+    "dutch_total_funding": 38183720.0,
+    "dutch_avg_funding": 5454817.142857143
+  },
+  {
+    "sector": "Hardware + Software",
+    "company_count": 1052,
+    "total_funding": 11734070275.0,
+    "avg_funding": 11154059.19676806,
+    "dutch_company_count": 14,
+    "dutch_total_funding": 168295311.0,
+    "dutch_avg_funding": 14024609.25
+  },
+  {
+    "sector": "Advertising",
+    "company_count": 1032,
+    "total_funding": 11336561738.0,
+    "avg_funding": 10985040.443798449,
+    "dutch_company_count": 6,
+    "dutch_total_funding": 21391715.0,
+    "dutch_avg_funding": 5347928.75
+  },
+  {
+    "sector": "Health and Wellness",
+    "company_count": 907,
+    "total_funding": 12054768975.0,
+    "avg_funding": 13290814.746416759,
+    "dutch_company_count": 7,
+    "dutch_total_funding": 142426000.0,
+    "dutch_avg_funding": 71213000.0
+  },
+  {
+    "sector": "Social Media",
+    "company_count": 867,
+    "total_funding": 3510353467.0,
+    "avg_funding": 4048850.596309112,
+    "dutch_company_count": 11,
+    "dutch_total_funding": 5987452.0,
+    "dutch_avg_funding": 598745.2
+  },
+  {
+    "sector": "Education",
+    "company_count": 849,
+    "total_funding": 6454855987.0,
+    "avg_funding": 7602892.799764428,
+    "dutch_company_count": 8,
+    "dutch_total_funding": 4826919.0,
+    "dutch_avg_funding": 804486.5
+  },
+  {
+    "sector": "Finance",
+    "company_count": 849,
+    "total_funding": 17034627709.0,
+    "avg_funding": 20064343.59128386,
+    "dutch_company_count": 6,
+    "dutch_total_funding": 62067950.0,
+    "dutch_avg_funding": 12413590.0
+  }
+]

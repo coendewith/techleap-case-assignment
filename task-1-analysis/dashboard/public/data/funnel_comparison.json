@@ -1,0 +1,231 @@
+{
+  "global": [
+    {
+      "stage": "Seed",
+      "count": 13697,
+      "percentage": 28.4,
+      "conversion_rate": 28.4
+    },
+    {
+      "stage": "Series A",
+      "count": 8605,
+      "percentage": 17.9,
+      "conversion_rate": 62.8
+    },
+    {
+      "stage": "Series B",
+      "count": 5104,
+      "percentage": 10.6,
+      "conversion_rate": 59.3
+    },
+    {
+      "stage": "Series C",
+      "count": 2574,
+      "percentage": 5.3,
+      "conversion_rate": 50.4
+    },
+    {
+      "stage": "Series D",
+      "count": 1137,
+      "percentage": 2.4,
+      "conversion_rate": 44.2
+    }
+  ],
+  "netherlands": [
+    {
+      "stage": "Seed",
+      "count": 97,
+      "percentage": 31.8,
+      "conversion_rate": 31.8
+    },
+    {
+      "stage": "Series A",
+      "count": 35,
+      "percentage": 11.5,
+      "conversion_rate": 36.1
+    },
+    {
+      "stage": "Series B",
+      "count": 22,
+      "percentage": 7.2,
+      "conversion_rate": 62.9
+    },
+    {
+      "stage": "Series C",
+      "count": 6,
+      "percentage": 2.0,
+      "conversion_rate": 27.3
+    },
+    {
+      "stage": "Series D",
+      "count": 4,
+      "percentage": 1.3,
+      "conversion_rate": 66.7
+    }
+  ],
+  "usa": [
+    {
+      "stage": "Seed",
+      "count": 6970,
+      "percentage": 24.9,
+      "conversion_rate": 24.9
+    },
+    {
+      "stage": "Series A",
+      "count": 5586,
+      "percentage": 19.9,
+      "conversion_rate": 80.1
+    },
+    {
+      "stage": "Series B",
+      "count": 3539,
+      "percentage": 12.6,
+      "conversion_rate": 63.4
+    },
+    {
+      "stage": "Series C",
+      "count": 1956,
+      "percentage": 7.0,
+      "conversion_rate": 55.3
+    },
+    {
+      "stage": "Series D",
+      "count": 932,
+      "percentage": 3.3,
+      "conversion_rate": 47.6
+    }
+  ],
+  "uk": [
+    {
+      "stage": "Seed",
+      "count": 783,
+      "percentage": 30.3,
+      "conversion_rate": 30.3
+    },
+    {
+      "stage": "Series A",
+      "count": 345,
+      "percentage": 13.4,
+      "conversion_rate": 44.1
+    },
+    {
+      "stage": "Series B",
+      "count": 195,
+      "percentage": 7.6,
+      "conversion_rate": 56.5
+    },
+    {
+      "stage": "Series C",
+      "count": 87,
+      "percentage": 3.4,
+      "conversion_rate": 44.6
+    },
+    {
+      "stage": "Series D",
+      "count": 28,
+      "percentage": 1.1,
+      "conversion_rate": 32.2
+    }
+  ],
+  "germany": [
+    {
+      "stage": "Seed",
+      "count": 238,
+      "percentage": 25.1,
+      "conversion_rate": 25.1
+    },
+    {
+      "stage": "Series A",
+      "count": 133,
+      "percentage": 14.0,
+      "conversion_rate": 55.9
+    },
+    {
+      "stage": "Series B",
+      "count": 86,
+      "percentage": 9.1,
+      "conversion_rate": 64.7
+    },
+    {
+      "stage": "Series C",
+      "count": 36,
+      "percentage": 3.8,
+      "conversion_rate": 41.9
+    },
+    {
+      "stage": "Series D",
+      "count": 14,
+      "percentage": 1.5,
+      "conversion_rate": 38.9
+    }
+  ],
+  "france": [
+    {
+      "stage": "Seed",
+      "count": 220,
+      "percentage": 25.8,
+      "conversion_rate": 25.8
+    },
+    {
+      "stage": "Series A",
+      "count": 216,
+      "percentage": 25.4,
+      "conversion_rate": 98.2
+    },
+    {
+      "stage": "Series B",
+      "count": 116,
+      "percentage": 13.6,
+      "conversion_rate": 53.7
+    },
+    {
+      "stage": "Series C",
+      "count": 45,
+      "percentage": 5.3,
+      "conversion_rate": 38.8
+    },
+    {
+      "stage": "Series D",
+      "count": 18,
+      "percentage": 2.1,
+      "conversion_rate": 40.0
+    }
+  ],
+  "sweden": [
+    {
+      "stage": "Seed",
+      "count": 62,
+      "percentage": 19.7,
+      "conversion_rate": 19.7
+    },
+    {
+      "stage": "Series A",
+      "count": 58,
+      "percentage": 18.5,
+      "conversion_rate": 93.5
+    },
+    {
+      "stage": "Series B",
+      "count": 27,
+      "percentage": 8.6,
+      "conversion_rate": 46.6
+    },
+    {
+      "stage": "Series C",
+      "count": 13,
+      "percentage": 4.1,
+      "conversion_rate": 48.1
+    },
+    {
+      "stage": "Series D",
+      "count": 4,
+      "percentage": 1.3,
+      "conversion_rate": 30.8
+    }
+  ],
+  "summary": {
+    "total_global": 48163,
+    "total_nl": 305,
+    "total_usa": 28006
+  }
+}

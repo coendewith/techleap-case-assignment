@@ -1,0 +1,82 @@
+[
+  {
+    "founded_year": 2005,
+    "company_count": 1407,
+    "avg_funding": 29498034.60095012,
+    "avg_rounds": 2.378820184790334,
+    "operating_rate": 76.47476901208245,
+    "acquired_rate": 14.356787491115849
+  },
+  {
+    "founded_year": 2006,
+    "company_count": 1802,
+    "avg_funding": 23057171.046202533,
+    "avg_rounds": 2.250832408435072,
+    "operating_rate": 75.74916759156493,
+    "acquired_rate": 13.20754716981132
+  },
+  {
+    "founded_year": 2007,
+    "company_count": 2324,
+    "avg_funding": 24335989.889106967,
+    "avg_rounds": 2.131669535283993,
+    "operating_rate": 77.23752151462995,
+    "acquired_rate": 10.800344234079173
+  },
+  {
+    "founded_year": 2008,
+    "company_count": 2342,
+    "avg_funding": 15168128.406626506,
+    "avg_rounds": 2.0614859094790776,
+    "operating_rate": 80.61485909479077,
+    "acquired_rate": 8.326216908625108
+  },
+  {
+    "founded_year": 2009,
+    "company_count": 2975,
+    "avg_funding": 12542558.3412,
+    "avg_rounds": 1.8726050420168068,
+    "operating_rate": 81.54621848739497,
+    "acquired_rate": 7.495798319327732
+  },
+  {
+    "founded_year": 2010,
+    "company_count": 3768,
+    "avg_funding": 8916207.533670565,
+    "avg_rounds": 1.745488322717622,
+    "operating_rate": 84.76645435244161,
+    "acquired_rate": 5.520169851380043
+  },
+  {
+    "founded_year": 2011,
+    "company_count": 4904,
+    "avg_funding": 6184078.120425321,
+    "avg_rounds": 1.6661908646003263,
+    "operating_rate": 88.33605220228385,
+    "acquired_rate": 3.8743882544861337
+  },
+  {
+    "founded_year": 2012,
+    "company_count": 5205,
+    "avg_funding": 4650654.388796975,
+    "avg_rounds": 1.5300672430355426,
+    "operating_rate": 92.39193083573487,
+    "acquired_rate": 2.0557156580211333
+  },
+  {
+    "founded_year": 2013,
+    "company_count": 4042,
+    "avg_funding": 2865552.393546346,
+    "avg_rounds": 1.334982681840673,
+    "operating_rate": 96.61058881741712,
+    "acquired_rate": 0.5937654626422563
+  },
+  {
+    "founded_year": 2014,
+    "company_count": 1467,
+    "avg_funding": 1865967.9950738917,
+    "avg_rounds": 1.1479209270620314,
+    "operating_rate": 99.18200408997954,
+    "acquired_rate": 0.0681663258350375
+  }
+]
