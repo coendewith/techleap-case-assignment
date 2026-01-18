@@ -1,0 +1,538 @@
+{
+  "split": {
+    "funding": {
+      "Deep Tech": 1449735317.0,
+      "Digital": 1622707954.0,
+      "Other": 941769645.0
+    },
+    "companies": {
+      "Deep Tech": 67,
+      "Digital": 75,
+      "Other": 163
+    }
+  },
+  "hubs": [
+    {
+      "city": "Amsterdam",
+      "company_count": 138,
+      "total_funding": 752776764.0,
+      "avg_funding": 6545884.904347826,
+      "deep_tech_count": 17,
+      "deep_tech_funding": 387018023.0,
+      "deep_tech_intensity_count": 12.318840579710146,
+      "deep_tech_intensity_funding": 51.41205753263659
+    },
+    {
+      "city": "Eindhoven",
+      "company_count": 15,
+      "total_funding": 87825725.0,
+      "avg_funding": 7984156.818181818,
+      "deep_tech_count": 6,
+      "deep_tech_funding": 85578099.0,
+      "deep_tech_intensity_count": 40.0,
+      "deep_tech_intensity_funding": 97.44081133403681
+    },
+    {
+      "city": "Rotterdam",
+      "company_count": 20,
+      "total_funding": 107177707.0,
+      "avg_funding": 9743427.909090908,
+      "deep_tech_count": 5,
+      "deep_tech_funding": 66649000.0,
+      "deep_tech_intensity_count": 25.0,
+      "deep_tech_intensity_funding": 62.18550654381886
+    },
+    {
+      "city": "Delft",
+      "company_count": 12,
+      "total_funding": 15141677.0,
+      "avg_funding": 1892709.625,
+      "deep_tech_count": 3,
+      "deep_tech_funding": 2954718.0,
+      "deep_tech_intensity_count": 25.0,
+      "deep_tech_intensity_funding": 19.51380946773597
+    },
+    {
+      "city": "Utrecht",
+      "company_count": 9,
+      "total_funding": 105716140.0,
+      "avg_funding": 13214517.5,
+      "deep_tech_count": 2,
+      "deep_tech_funding": 100300820.0,
+      "deep_tech_intensity_count": 22.22222222222222,
+      "deep_tech_intensity_funding": 94.87748985159693
+    }
+  ],
+  "all_cities": [
+    {
+      "city": "The Hague",
+      "province": "South Holland",
+      "company_count": 4,
+      "total_funding": 1371634404.0,
+      "deep_tech_count": 0,
+      "deep_tech_funding": 0.0,
+      "deep_tech_intensity": 0.0
+    },
+    {
+      "city": "Amsterdam",
+      "province": "North Holland",
+      "company_count": 138,
+      "total_funding": 752776764.0,
+      "deep_tech_count": 17,
+      "deep_tech_funding": 387018023.0,
+      "deep_tech_intensity": 12.318840579710146
+    },
+    {
+      "city": "Leiden",
+      "province": "South Holland",
+      "company_count": 8,
+      "total_funding": 561984022.0,
+      "deep_tech_count": 7,
+      "deep_tech_funding": 555184022.0,
+      "deep_tech_intensity": 87.5
+    },
+    {
+      "city": "Rotterdam",
+      "province": "South Holland",
+      "company_count": 20,
+      "total_funding": 107177707.0,
+      "deep_tech_count": 5,
+      "deep_tech_funding": 66649000.0,
+      "deep_tech_intensity": 25.0
+    },
+    {
+      "city": "Utrecht",
+      "province": "Utrecht",
+      "company_count": 9,
+      "total_funding": 105716140.0,
+      "deep_tech_count": 2,
+      "deep_tech_funding": 100300820.0,
+      "deep_tech_intensity": 22.22222222222222
+    },
+    {
+      "city": "Eindhoven",
+      "province": "North Brabant",
+      "company_count": 15,
+      "total_funding": 87825725.0,
+      "deep_tech_count": 6,
+      "deep_tech_funding": 85578099.0,
+      "deep_tech_intensity": 40.0
+    },
+    {
+      "city": "Bunnik",
+      "province": "Utrecht",
+      "company_count": 1,
+      "total_funding": 55616984.0,
+      "deep_tech_count": 1,
+      "deep_tech_funding": 55616984.0,
+      "deep_tech_intensity": 100.0
+    },
+    {
+      "city": "Barneveld",
+      "province": "Gelderland",
+      "company_count": 2,
+      "total_funding": 40953579.0,
+      "deep_tech_count": 1,
+      "deep_tech_funding": 37500000.0,
+      "deep_tech_intensity": 50.0
+    },
+    {
+      "city": "Waardenburg",
+      "province": "Other",
+      "company_count": 1,
+      "total_funding": 29360000.0,
+      "deep_tech_count": 0,
+      "deep_tech_funding": 0.0,
+      "deep_tech_intensity": 0.0
+    },
+    {
+      "city": "Delft",
+      "province": "South Holland",
+      "company_count": 12,
+      "total_funding": 15141677.0,
+      "deep_tech_count": 3,
+      "deep_tech_funding": 2954718.0,
+      "deep_tech_intensity": 25.0
+    },
+    {
+      "city": "Barendrecht",
+      "province": "Other",
+      "company_count": 1,
+      "total_funding": 9000000.0,
+      "deep_tech_count": 0,
+      "deep_tech_funding": 0.0,
+      "deep_tech_intensity": 0.0
+    },
+    {
+      "city": "De Goorn",
+      "province": "North Holland",
+      "company_count": 1,
+      "total_funding": 8362900.0,
+      "deep_tech_count": 1,
+      "deep_tech_funding": 8362900.0,
+      "deep_tech_intensity": 100.0
+    },
+    {
+      "city": "Zaandijk",
+      "province": "North Holland",
+      "company_count": 1,
+      "total_funding": 5666100.0,
+      "deep_tech_count": 0,
+      "deep_tech_funding": 0.0,
+      "deep_tech_intensity": 0.0
+    },
+    {
+      "city": "Wageningen",
+      "province": "Gelderland",
+      "company_count": 2,
+      "total_funding": 5569650.0,
+      "deep_tech_count": 2,
+      "deep_tech_funding": 5569650.0,
+      "deep_tech_intensity": 100.0
+    },
+    {
+      "city": "Zaanstad",
+      "province": "North Holland",
+      "company_count": 1,
+      "total_funding": 2711993.0,
+      "deep_tech_count": 0,
+      "deep_tech_funding": 0.0,
+      "deep_tech_intensity": 0.0
+    },
+    {
+      "city": "Amstelveen",
+      "province": "North Holland",
+      "company_count": 3,
+      "total_funding": 2590393.0,
+      "deep_tech_count": 0,
+      "deep_tech_funding": 0.0,
+      "deep_tech_intensity": 0.0
+    },
+    {
+      "city": "Arnhem",
+      "province": "Gelderland",
+      "company_count": 1,
+      "total_funding": 2500000.0,
+      "deep_tech_count": 0,
+      "deep_tech_funding": 0.0,
+      "deep_tech_intensity": 0.0
+    },
+    {
+      "city": "Den Haag",
+      "province": "South Holland",
+      "company_count": 1,
+      "total_funding": 2450000.0,
+      "deep_tech_count": 0,
+      "deep_tech_funding": 0.0,
+      "deep_tech_intensity": 0.0
+    },
+    {
+      "city": "Almere",
+      "province": "Flevoland",
+      "company_count": 1,
+      "total_funding": 2243200.0,
+      "deep_tech_count": 0,
+      "deep_tech_funding": 0.0,
+      "deep_tech_intensity": 0.0
+    },
+    {
+      "city": "Breukelen",
+      "province": "Utrecht",
+      "company_count": 3,
+      "total_funding": 2069995.0,
+      "deep_tech_count": 0,
+      "deep_tech_funding": 0.0,
+      "deep_tech_intensity": 0.0
+    },
+    {
+      "city": "Hoofddorp",
+      "province": "North Holland",
+      "company_count": 1,
+      "total_funding": 1543920.0,
+      "deep_tech_count": 1,
+      "deep_tech_funding": 1543920.0,
+      "deep_tech_intensity": 100.0
+    },
+    {
+      "city": "Hoevelaken",
+      "province": "Gelderland",
+      "company_count": 1,
+      "total_funding": 1447000.0,
+      "deep_tech_count": 1,
+      "deep_tech_funding": 1447000.0,
+      "deep_tech_intensity": 100.0
+    },
+    {
+      "city": "Groningen",
+      "province": "Groningen",
+      "company_count": 3,
+      "total_funding": 832344.0,
+      "deep_tech_count": 0,
+      "deep_tech_funding": 0.0,
+      "deep_tech_intensity": 0.0
+    },
+    {
+      "city": "Huins",
+      "province": "Friesland",
+      "company_count": 1,
+      "total_funding": 788821.0,
+      "deep_tech_count": 1,
+      "deep_tech_funding": 788821.0,
+      "deep_tech_intensity": 100.0
+    },
+    {
+      "city": "Boskoop",
+      "province": "South Holland",
+      "company_count": 1,
+      "total_funding": 720480.0,
+      "deep_tech_count": 0,
+      "deep_tech_funding": 0.0,
+      "deep_tech_intensity": 0.0
+    },
+    {
+      "city": "Alkmaar",
+      "province": "North Holland",
+      "company_count": 1,
+      "total_funding": 639401.0,
+      "deep_tech_count": 1,
+      "deep_tech_funding": 639401.0,
+      "deep_tech_intensity": 100.0
+    },
+    {
+      "city": "Gorinchem",
+      "province": "South Holland",
+      "company_count": 1,
+      "total_funding": 619494.0,
+      "deep_tech_count": 0,
+      "deep_tech_funding": 0.0,
+      "deep_tech_intensity": 0.0
+    },
+    {
+      "city": "Hoorn",
+      "province": "North Holland",
+      "company_count": 1,
+      "total_funding": 514640.0,
+      "deep_tech_count": 0,
+      "deep_tech_funding": 0.0,
+      "deep_tech_intensity": 0.0
+    },
+    {
+      "city": "Oldenzaal",
+      "province": "Overijssel",
+      "company_count": 1,
+      "total_funding": 500000.0,
+      "deep_tech_count": 0,
+      "deep_tech_funding": 0.0,
+      "deep_tech_intensity": 0.0
+    },
+    {
+      "city": "Vleuten",
+      "province": "Utrecht",
+      "company_count": 1,
+      "total_funding": 428550.0,
+      "deep_tech_count": 0,
+      "deep_tech_funding": 0.0,
+      "deep_tech_intensity": 0.0
+    },
+    {
+      "city": "Castricum",
+      "province": "North Holland",
+      "company_count": 1,
+      "total_funding": 324713.0,
+      "deep_tech_count": 0,
+      "deep_tech_funding": 0.0,
+      "deep_tech_intensity": 0.0
+    },
+    {
+      "city": "Haarlem",
+      "province": "North Holland",
+      "company_count": 7,
+      "total_funding": 271589.0,
+      "deep_tech_count": 1,
+      "deep_tech_funding": 98347.0,
+      "deep_tech_intensity": 14.285714285714285
+    },
+    {
+      "city": "Rijswijk",
+      "province": "South Holland",
+      "company_count": 2,
+      "total_funding": 215850.0,
+      "deep_tech_count": 0,
+      "deep_tech_funding": 0.0,
+      "deep_tech_intensity": 0.0
+    },
+    {
+      "city": "Goes",
+      "province": "Zeeland",
+      "company_count": 1,
+      "total_funding": 19299.0,
+      "deep_tech_count": 0,
+      "deep_tech_funding": 0.0,
+      "deep_tech_intensity": 0.0
+    },
+    {
+      "city": "Schagen",
+      "province": "North Holland",
+      "company_count": 1,
+      "total_funding": 19299.0,
+      "deep_tech_count": 0,
+      "deep_tech_funding": 0.0,
+      "deep_tech_intensity": 0.0
+    },
+    {
+      "city": "Ede",
+      "province": "Gelderland",
+      "company_count": 2,
+      "total_funding": 2605.0,
+      "deep_tech_count": 0,
+      "deep_tech_funding": 0.0,
+      "deep_tech_intensity": 0.0
+    },
+    {
+      "city": "Amersfoort",
+      "province": "Utrecht",
+      "company_count": 4,
+      "total_funding": 0.0,
+      "deep_tech_count": 0,
+      "deep_tech_funding": 0.0,
+      "deep_tech_intensity": 0.0
+    },
+    {
+      "city": "Enschede",
+      "province": "Overijssel",
+      "company_count": 3,
+      "total_funding": 0.0,
+      "deep_tech_count": 2,
+      "deep_tech_funding": 0.0,
+      "deep_tech_intensity": 66.66666666666666
+    },
+    {
+      "city": "Halfweg",
+      "province": "North Holland",
+      "company_count": 2,
+      "total_funding": 0.0,
+      "deep_tech_count": 0,
+      "deep_tech_funding": 0.0,
+      "deep_tech_intensity": 0.0
+    },
+    {
+      "city": "Hilversum",
+      "province": "North Holland",
+      "company_count": 2,
+      "total_funding": 0.0,
+      "deep_tech_count": 0,
+      "deep_tech_funding": 0.0,
+      "deep_tech_intensity": 0.0
+    }
+  ],
+  "provinces": [
+    {
+      "province": "South Holland",
+      "company_count": 49,
+      "total_funding": 2059943634.0,
+      "deep_tech_count": 15,
+      "deep_tech_funding": 624787740.0,
+      "deep_tech_intensity": 30.612244897959183,
+      "highlight": "Major Capital Hub"
+    },
+    {
+      "province": "North Holland",
+      "company_count": 160,
+      "total_funding": 775421712.0,
+      "deep_tech_count": 21,
+      "deep_tech_funding": 397662591.0,
+      "deep_tech_intensity": 13.125,
+      "highlight": "Major Capital Hub"
+    },
+    {
+      "province": "Utrecht",
+      "company_count": 18,
+      "total_funding": 163831669.0,
+      "deep_tech_count": 3,
+      "deep_tech_funding": 155917804.0,
+      "deep_tech_intensity": 16.666666666666664,
+      "highlight": "Emerging Ecosystem"
+    },
+    {
+      "province": "North Brabant",
+      "company_count": 15,
+      "total_funding": 87825725.0,
+      "deep_tech_count": 6,
+      "deep_tech_funding": 85578099.0,
+      "deep_tech_intensity": 40.0,
+      "highlight": "Deep Tech Hotspot"
+    },
+    {
+      "province": "Gelderland",
+      "company_count": 8,
+      "total_funding": 50472834.0,
+      "deep_tech_count": 4,
+      "deep_tech_funding": 44516650.0,
+      "deep_tech_intensity": 50.0,
+      "highlight": "Deep Tech Hotspot"
+    },
+    {
+      "province": "Flevoland",
+      "company_count": 1,
+      "total_funding": 2243200.0,
+      "deep_tech_count": 0,
+      "deep_tech_funding": 0.0,
+      "deep_tech_intensity": 0.0,
+      "highlight": "Emerging Ecosystem"
+    },
+    {
+      "province": "Groningen",
+      "company_count": 3,
+      "total_funding": 832344.0,
+      "deep_tech_count": 0,
+      "deep_tech_funding": 0.0,
+      "deep_tech_intensity": 0.0,
+      "highlight": "Emerging Ecosystem"
+    },
+    {
+      "province": "Friesland",
+      "company_count": 1,
+      "total_funding": 788821.0,
+      "deep_tech_count": 1,
+      "deep_tech_funding": 788821.0,
+      "deep_tech_intensity": 100.0,
+      "highlight": "Deep Tech Hotspot"
+    },
+    {
+      "province": "Overijssel",
+      "company_count": 4,
+      "total_funding": 500000.0,
+      "deep_tech_count": 2,
+      "deep_tech_funding": 0.0,
+      "deep_tech_intensity": 50.0,
+      "highlight": "Deep Tech Hotspot"
+    },
+    {
+      "province": "Zeeland",
+      "company_count": 1,
+      "total_funding": 19299.0,
+      "deep_tech_count": 0,
+      "deep_tech_funding": 0.0,
+      "deep_tech_intensity": 0.0,
+      "highlight": "Emerging Ecosystem"
+    },
+    {
+      "province": "Limburg",
+      "company_count": 0,
+      "total_funding": 0.0,
+      "deep_tech_count": 0,
+      "deep_tech_funding": 0.0,
+      "deep_tech_intensity": 0,
+      "highlight": "No Data Available"
+    },
+    {
+      "province": "Drenthe",
+      "company_count": 0,
+      "total_funding": 0.0,
+      "deep_tech_count": 0,
+      "deep_tech_funding": 0.0,
+      "deep_tech_intensity": 0,
+      "highlight": "No Data Available"
+    }
+  ]
+}

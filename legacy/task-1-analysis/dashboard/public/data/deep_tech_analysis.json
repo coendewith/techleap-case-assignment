@@ -1,0 +1,67 @@
+{
+  "dutch": {
+    "deep_tech": {
+      "count": 68,
+      "acquired_rate": 8.8,
+      "operating_rate": 88.2,
+      "closed_rate": 1.5,
+      "avg_funding": 29586435.0,
+      "total_funding": 1449735317.0
+    },
+    "digital": {
+      "count": 82,
+      "acquired_rate": 3.7,
+      "operating_rate": 86.6,
+      "closed_rate": 4.9,
+      "avg_funding": 25476687.0,
+      "total_funding": 1630507989.0
+    },
+    "other": {
+      "count": 155,
+      "acquired_rate": 2.6,
+      "operating_rate": 84.5,
+      "closed_rate": 5.2,
+      "avg_funding": 9247224.0,
+      "total_funding": 933969610.0
+    }
+  },
+  "global": {
+    "deep_tech": {
+      "count": 8898,
+      "acquired_rate": 5.5,
+      "operating_rate": 87.8,
+      "closed_rate": 4.4,
+      "avg_funding": 21875801.0,
+      "total_funding": 176384584117.0
+    },
+    "digital": {
+      "count": 15703,
+      "acquired_rate": 9.3,
+      "operating_rate": 81.4,
+      "closed_rate": 7.1,
+      "avg_funding": 12962274.0,
+      "total_funding": 173850018285.0
+    },
+    "other": {
+      "count": 23562,
+      "acquired_rate": 5.8,
+      "operating_rate": 86.8,
+      "closed_rate": 4.4,
+      "avg_funding": 14412565.0,
+      "total_funding": 267828686820.0
+    }
+  },
+  "time_to_scale": {
+    "multi_round_count": 88,
+    "single_round_count": 217,
+    "single_round_pct": 71.1,
+    "avg_days": 769.0,
+    "avg_years": 2.1,
+    "median_days": 623.0
+  },
+  "headline_insights": {
+    "deep_tech_acquisition_advantage": 2.4,
+    "dutch_vs_global_deep_tech_delta": 3.3,
+    "amsterdam_concentration": 45.2
+  }
+}

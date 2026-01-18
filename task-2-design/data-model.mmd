@@ -1,111 +1,61 @@
 erDiagram
-    %% Techleap Ecosystem Data Warehouse - Entity Relationship Diagram
-    %% Star Schema Design with SCD Type 2 for Company Dimension
+    %% CONCEPTUAL MODEL - Simplified Star Schema
+    %% For production implementation, see: data-model.dbml (dbdiagram.io format)
+    %%
+    %% Techleap Ecosystem Data Warehouse - Star Schema
 
     dim_date {
-        int date_id PK
+        int date_sk PK
         date full_date
         int year
         int quarter
         int month
-        int week
-        int day_of_week
-        varchar day_name
-        varchar month_name
+        string month_name
         boolean is_weekend
     }
 
-    dim_geography {
-        int geography_id PK
-        varchar city
-        varchar region
-        varchar country
-        char country_code
-        varchar continent
-    }
-
-    dim_investor {
-        bigint investor_id PK
-        varchar investor_source_id
-        varchar investor_name
-        varchar investor_type
-        varchar headquarters_city
-        varchar headquarters_country
-        decimal assets_under_mgmt
-        int total_investments
-    }
-
-    dim_company {
-        bigint company_sk PK
-        varchar company_id NK
-        varchar company_name
+    dim_companies {
+        int company_sk PK
+        string company_id
+        string name
         date founding_date
         int employee_count
         decimal total_funding_eur
-        varchar current_status
-        int geography_id FK
+        string city
+        string country
         timestamp valid_from
         timestamp valid_to
         boolean is_current
     }
 
-    bridge_company_industry {
-        bigint company_sk FK
-        varchar industry_name PK
-        varchar industry_category
-        boolean is_primary
-    }
-
     fact_funding_rounds {
-        bigint funding_round_id PK
-        bigint company_sk FK
-        bigint investor_id FK
-        int date_id FK
-        varchar round_type
-        int round_sequence
+        int funding_round_sk PK
+        int company_sk FK
+        date round_date
+        string round_type
         decimal amount_eur
-        decimal amount_usd
-        decimal valuation_post_eur
-        boolean is_lead_investor
-    }
-
-    fact_company_snapshot {
-        bigint snapshot_id PK
-        bigint company_sk FK
-        int snapshot_date_id FK
-        int employee_count
-        decimal total_funding_eur
-        int funding_rounds_count
-        varchar current_status
     }
 
     fact_patents {
-        bigint patent_id PK
-        bigint company_sk FK
+        int patent_id PK
+        int company_sk FK
         int filing_date_id FK
-        varchar patent_number
-        varchar patent_office
-        text patent_title
+        string patent_number
+        string patent_office
     }
 
     fact_news_mentions {
-        bigint mention_id PK
-        bigint company_sk FK
+        int mention_id PK
+        int company_sk FK
         int mention_date_id FK
-        varchar article_url
-        varchar source_name
+        string source_name
         decimal sentiment_score
     }
 
     %% Relationships
-    dim_company ||--o{ fact_funding_rounds : "receives"
-    dim_investor ||--o{ fact_funding_rounds : "provides"
-    dim_date ||--o{ fact_funding_rounds : "occurs on"
-    dim_geography ||--o{ dim_company : "located in"
-    dim_company ||--o{ bridge_company_industry : "operates in"
-    dim_company ||--o{ fact_company_snapshot : "snapshot of"
-    dim_date ||--o{ fact_company_snapshot : "as of"
-    dim_company ||--o{ fact_patents : "holds"
-    dim_date ||--o{ fact_patents : "filed on"
-    dim_company ||--o{ fact_news_mentions : "mentioned in"
-    dim_date ||--o{ fact_news_mentions : "published on"
+    dim_companies ||--o{ fact_funding_rounds : receives
+    dim_date ||--o{ fact_funding_rounds : on
+    dim_companies ||--o{ fact_patents : holds
+    dim_date ||--o{ fact_patents : filed
+    dim_companies ||--o{ fact_news_mentions : mentioned
+    dim_date ||--o{ fact_news_mentions : published

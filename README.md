@@ -1,155 +1,77 @@
 # Techleap Senior Data Analyst Case Study
 
-## Overview
+**Author**: Coen de With | **Date**: January 2026
 
-This repository contains my submission for the Techleap Senior Data Analyst case study. The assignment analyzes startup ecosystem data to derive policy insights and designs a scalable data infrastructure for ecosystem monitoring.
+---
 
 ## Repository Structure
 
 ```
-techleap-case/
-├── README.md                          # This file
-├── tools.md                           # Tool choices and rationale
-├── investments_VC.csv                 # Source data (Crunchbase via Kaggle)
+techleap/
+├── README.md                    # This file
+├── tools.md                     # Tool choices + AI disclosure
+├── investments_VC.csv           # Source data
 │
-├── task-1-analysis/                   # Data Analysis Report
-│   ├── report.md                      # Executive briefing (source)
-│   ├── presentation.md                # Ministry slides (Marp format)
-│   ├── analysis.ipynb                 # Full analysis notebook
-│   └── figures/                       # Generated visualizations
-│       ├── 01_funding_funnel.png
-│       ├── 02_outcomes_by_rounds.png
-│       ├── 03_peer_benchmark.png
-│       ├── 04_funding_timeline.png
-│       └── 05_sector_analysis.png
+├── task-1-analysis/
+│   ├── report.md                # Executive briefing (1 page)
+│   └── v2/
+│       ├── analysis.ipynb       # SIMPLE: 4 findings, clean code
+│       ├── analysis_full.ipynb  # ADVANCED: All explorations + McKinsey frameworks
+│       └── data/                # JSON exports
 │
-└── task-2-design/                     # Data Engineering Design
-    ├── design-doc.md                  # Comprehensive design document
-    ├── schema.sql                     # Production-ready PostgreSQL DDL
-    ├── data-model.mmd                 # ER diagram (Mermaid format)
-    └── dbt/                           # Sample dbt project
-        ├── dbt_project.yml
-        └── models/
-            ├── staging/               # Staging layer models
-            │   ├── stg_companies.sql
-            │   ├── stg_funding_rounds.sql
-            │   └── schema.yml
-            └── marts/                 # Analytics marts
-                ├── mart_funding_analysis.sql
-                ├── mart_ecosystem_metrics.sql
-                └── schema.yml
-```
-
-## Quick Start
-
-### Prerequisites
-
-- Python 3.8+
-- pip
-
-### Setup
-
-```bash
-# Clone the repository
-git clone https://github.com/your-username/techleap-case.git
-cd techleap-case
-
-# Create virtual environment
-python3 -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-
-# Install dependencies
-pip install pandas matplotlib seaborn numpy jupyter
-```
-
-### Running the Analysis
-
-```bash
-# Start Jupyter notebook
-jupyter notebook task-1-analysis/analysis.ipynb
-
-# Or run the analysis script directly
-cd task-1-analysis
-python -c "exec(open('analysis.ipynb').read())"
-```
-
-### Viewing the Report
-
-The executive report is available in `task-1-analysis/report.md`. To convert to PDF:
-
-```bash
-# Using pandoc (if installed)
-pandoc task-1-analysis/report.md -o task-1-analysis/report.pdf --pdf-engine=xelatex
-
-# Or use any Markdown viewer/editor
-```
-
-### Viewing the Presentation
-
-The presentation is in Marp format (`task-1-analysis/presentation.md`). To view:
-
-```bash
-# Using Marp CLI (if installed)
-npx @marp-team/marp-cli task-1-analysis/presentation.md --pdf
-
-# Or use VS Code with Marp extension
+└── task-2-design/
+    ├── design-doc.md            # Data model design
+    ├── data-model.mmd           # Mermaid diagram
+    └── data-model.png           # Visual diagram
 ```
 
 ---
 
-## Task 1: Data Analysis Report
+## Task 1: Data Analysis
+
+### Report
+**File**: [task-1-analysis/report.md](task-1-analysis/report.md) (1 page)
 
 ### Key Findings
+1. **Graduation Gap**: Dutch Seed→A is 6.2% vs 16.1% USA
+2. **Capital Doesn't Fix It**: 300x funding = 4pp better outcomes
+3. **Rounds Matter**: 4+ rounds = 2x acquisition rate
+4. **Tortoise Effect**: 3+ year bootstrap = 1.6x better
 
-1. **The Valley of Death**: 59% of startups never progress beyond their first funding round. Only 17% of seed-funded companies reach Series A.
+### Notebooks
 
-2. **More Funding Rounds = Better Outcomes**: Companies with 4+ funding rounds show 12-15% acquisition rates vs. 4% for single-round companies.
+| Notebook | Purpose |
+|----------|---------|
+| `analysis.ipynb` | **For review**: Simple, 4 findings, clear reasoning |
+| `analysis_full.ipynb` | **Bonus exploration**: McKinsey/Harvard frameworks, survival analysis, statistical tests, Dutch sector deep-dive |
 
-3. **Netherlands Positioning**: Dutch startups attract $13.2M average funding with 86% operating rate (above global average).
-
-### Deliverables
-
-- **Executive Report** (`report.md`): 2-page briefing for Ministry of Economic Affairs
-- **Presentation** (`presentation.md`): 12-slide deck for Ministry meeting
-- **Analysis Notebook** (`analysis.ipynb`): Full reproducible analysis
-- **Visualizations** (`figures/`): 5 publication-ready charts
-
----
-
-## Task 2: Data Engineering Design
-
-### Architecture Summary
-
-Star schema data warehouse optimized for analytical queries:
-
-- **Fact Table**: `fact_funding_rounds` - Core funding event data
-- **Dimensions**: Company (SCD Type 2), Investor, Geography, Date
-- **Bridge Tables**: Company-Industry many-to-many relationship
-
-### Key Design Decisions
-
-| Decision | Rationale |
-|----------|-----------|
-| Star Schema | Query performance over storage efficiency at this scale |
-| SCD Type 2 | Historical tracking critical for ecosystem monitoring |
-| PostgreSQL | Cost-effective for 5GB daily; scalable to BigQuery |
-| dbt | Version-controlled SQL transformations with lineage |
-
-### Deliverables
-
-- **Design Document** (`design-doc.md`): Comprehensive architecture specification
-- **SQL Schema** (`schema.sql`): Production-ready PostgreSQL DDL
-- **ER Diagram** (`data-model.mmd`): Mermaid entity relationship diagram
-- **dbt Project** (`dbt/`): Sample staging and mart models
+**Recommendation**: Help companies complete rounds, not just get more money.
 
 ---
 
-## Author
+## Task 2: Data Engineering
 
-Coen de With
+**File**: [task-2-design/design-doc.md](task-2-design/design-doc.md)
+
+**Approach**: Star schema (4 tables) with SCD Type 2 on companies.
+
+**Why simple**: Bridge tables add complexity without proportional value.
 
 ---
 
-## License
+## How to Run
 
-This project is submitted as part of the Techleap hiring process and is not licensed for redistribution.
+```bash
+pip install pandas matplotlib numpy jupyter
+jupyter notebook task-1-analysis/v2/analysis.ipynb
+```
+
+---
+
+## Tool Choices
+
+See [tools.md](tools.md) — includes honest AI usage disclosure.
+
+---
+
+*"A simple solution with clear reasoning beats a complex solution you can't explain."*

@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+:root {
+  /* Techleap / Dutch Enterprises Brand Palette */
+  --bg-primary: #020617;
+  /* Slate 950 - Deep Space Black */
+  --bg-secondary: #0f172a;
+  /* Slate 900 - Dark Slate */
+  --bg-tertiary: #1e293b;
+  /* Slate 800 - Card Surface */
+
+  /* Primary Brand Colors */
+  --techleap-red: #ee3124;
+  /* Dutch Red - primary accent */
+  --techleap-blue: #0d2d6c;
+  /* Dutch Blue - branding only, not background */
+  --techleap-light-blue: #919fbf;
+  /* Dutch Light Blue */
+  --techleap-gray: #6b6e70;
+  /* Dutch Gray */
+
+  /* Accent Colors */
+  --techleap-dark-red: #9c2a23;
+  --techleap-success: #10b981;
+  /* Emerald 500 - sharper success */
+  --techleap-warning: #f59e0b;
+  /* Amber 500 - sharper warning */
+
+  --accent-red: #ee3124;
+  --accent-red-hover: #d42a1f;
+  --accent-blue: #38bdf8;
+  /* Sky 400 - more vibrant against dark */
+
+  --text-primary: #f8fafc;
+  /* Slate 50 */
+  --text-secondary: #94a3b8;
+  /* Slate 400 */
+  --text-muted: #64748b;
+  /* Slate 500 */
+}
+
+@theme inline {
+  --color-background: var(--bg-primary);
+  --color-foreground: var(--text-primary);
+
+  --color-primary: var(--bg-primary);
+  --color-secondary: var(--bg-secondary);
+  --color-tertiary: var(--bg-tertiary);
+
+  --color-accent: var(--accent-red);
+  --color-accent-hover: var(--accent-red-hover);
+  --color-accent-blue: var(--accent-blue);
+  --color-accent-red: var(--accent-red);
+
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted: var(--text-muted);
+}
+
+body {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-inter), sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-space), sans-serif;
+}

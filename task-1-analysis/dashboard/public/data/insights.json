@@ -1,0 +1,131 @@
+{
+  "hero_insights": [
+    {
+      "id": "funding-rounds",
+      "title": "The Only Metric That Matters",
+      "subtitle": "More rounds = 2x better outcomes",
+      "color": "green",
+      "icon": "TrendingUp",
+      "confidence": "HIGH",
+      "sample_size": "n=48,163",
+      "primary_stat": {
+        "value": "10%",
+        "label": "Acquisition rate (4+ rounds)",
+        "context": "n=3,872 companies"
+      },
+      "comparison_stat": {
+        "value": "5%",
+        "label": "Acquisition rate (1 round)",
+        "context": "n=31,443 companies"
+      },
+      "insight": "Companies that secure 4+ funding rounds have 2x higher acquisition rates than those with only one round. This is the most robust finding in the dataset.",
+      "implication": "Focus interventions on helping companies COMPLETE rounds, not just raising more capital per round."
+    },
+    {
+      "id": "capital-paradox",
+      "title": "Capital Doesn't Fix This",
+      "subtitle": "300x more money = 4% better",
+      "color": "purple",
+      "icon": "DollarSign",
+      "confidence": "HIGH",
+      "sample_size": "n=40,000+",
+      "low_capital": {
+        "avg_per_round": "$47K",
+        "success_rate": 89.4
+      },
+      "high_capital": {
+        "avg_per_round": "$14.6M",
+        "success_rate": 93.7
+      },
+      "multiple": "300x",
+      "difference": "4.3pp",
+      "insight": "Once you cross a minimum threshold (~$300K), founder quality matters exponentially more than funding size. This challenges the 'spray capital' model.",
+      "implication": "Focus on founder selection and matching, not capital availability."
+    },
+    {
+      "id": "graduation-gap",
+      "title": "The Graduation Gap",
+      "subtitle": "Dutch Seed→A lags peers",
+      "color": "amber",
+      "icon": "TrendingDown",
+      "confidence": "MEDIUM",
+      "sample_size": "NL n=97 seed companies",
+      "primary_stat": {
+        "value": "6.2%",
+        "label": "Dutch Seed→Series A",
+        "context": "Only 6 of 97 companies"
+      },
+      "comparison_data": [
+        {"country": "Israel", "rate": 21.9},
+        {"country": "USA", "rate": 16.1},
+        {"country": "Germany", "rate": 12.1},
+        {"country": "France", "rate": 9.5},
+        {"country": "UK", "rate": 8.2},
+        {"country": "Netherlands", "rate": 6.2}
+      ],
+      "insight": "Dutch startups have lower Seed→Series A conversion than European peers. Sample sizes are small (n=97) but the pattern is consistent.",
+      "implication": "The intervention point isn't Series A capital. It's the 12-24 months after seed where companies stall."
+    },
+    {
+      "id": "funding-velocity",
+      "title": "Speed Isn't Your Problem",
+      "subtitle": "Dutch pace matches global",
+      "color": "blue",
+      "icon": "Clock",
+      "confidence": "MEDIUM",
+      "sample_size": "NL n=88, Global n=11,427",
+      "primary_stat": {
+        "value": "14.4",
+        "label": "months between rounds (NL)",
+        "context": "n=88 multi-round companies"
+      },
+      "comparison_stat": {
+        "value": "12.8",
+        "label": "months between rounds (Global)",
+        "context": "n=16,720 companies"
+      },
+      "insight": "Dutch startups raise at competitive velocity. The ~2 month gap is not a structural disadvantage. The problem isn't speed—it's completion.",
+      "implication": "Don't invest in 'accelerating' fundraising. Invest in helping more companies COMPLETE rounds."
+    }
+  ],
+  "exploratory_insights": [
+    {
+      "id": "leiden-caveat",
+      "title": "City Patterns (Low Confidence)",
+      "stat": "Leiden 37.5% vs Amsterdam 3.6%",
+      "confidence": "LOW",
+      "sample_size": "n=8 vs n=139",
+      "why_it_matters": "Interesting pattern but n=8 is too small for conclusions. Needs Dealroom validation with larger sample."
+    },
+    {
+      "id": "crisis-vulnerability",
+      "title": "2008 Crisis Impact",
+      "stat": "Dutch drop: -62% vs USA: -40%",
+      "confidence": "MEDIUM",
+      "sample_size": "NL n=~50 per cohort",
+      "why_it_matters": "Dutch ecosystem appears more vulnerable to macro shocks, but sample is borderline."
+    },
+    {
+      "id": "two-companies",
+      "title": "Funding Concentration",
+      "stat": "O3b ($1.37B) + Mobileye ($515M) = 47% of NL",
+      "confidence": "HIGH",
+      "why_it_matters": "Headline numbers are misleading. The median Dutch company raised $0.74M."
+    },
+    {
+      "id": "sector-concentration",
+      "title": "Sector Concentration Risk",
+      "stat": "Top 3 sectors = 50% of funding",
+      "confidence": "MEDIUM",
+      "sample_size": "n=305",
+      "why_it_matters": "Ecosystem may be too dependent on specific sectors. Downturn in biotech or payments would hit hard."
+    },
+    {
+      "id": "zombie-problem",
+      "title": "The Zombie Problem",
+      "stat": "85.9% 'operating' includes stalled companies",
+      "confidence": "HIGH",
+      "why_it_matters": "Real success rate is lower than numbers suggest. Many companies surviving but not thriving."
+    }
+  ]
+}
