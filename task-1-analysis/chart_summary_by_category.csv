@@ -1,0 +1,27 @@
+Category,Sub_Category,Chart_Count,Avg_Score,Best_Chart,Best_Score,Relevance_Notes
+Conversion Rates,Country Comparison,3,22.3,finding1_graduation_gap.png,24,CRITICAL - Your #1 finding shows the core problem
+Conversion Rates,Industry Type,1,17.0,sq1_3c_sector_conversion.png,17,Supporting - shows sector variation
+Outcomes,Rounds Analysis,2,22.0,finding2_rounds_matter.png,24,CRITICAL - Your #2 finding shows pattern
+Outcomes,Country Comparison,3,19.0,sq1_1a_success_scorecard.png,21,Strong supporting - exit rate comparisons
+Outcomes,EDA Distribution,1,13.0,status_distributions.png,13,Reference only - basic status breakdown
+Timing,Country Comparison,4,21.3,finding3_tortoise_effect.png,24,CRITICAL - Your #3 finding is actionable
+Timing,NL Specific,1,19.0,nl_timing_impact.png,19,Strong supporting - NL-specific timing
+Timing,EDA Distribution,1,13.0,timing_distributions.png,13,Reference only - basic distributions
+Stage Progression,Country Comparison,2,23.0,sq1_1b_funding_funnel.png,23,Very strong - Valley of Death visual
+Funding Patterns,Country Comparison,4,19.3,finding7_funding_comparison.png,19,Supporting - shows funding gaps
+Funding Patterns,EDA Distribution,2,13.0,funding_distributions.png,13,Reference only - basic distributions
+Sector Analysis,Industry Type,2,17.5,sq1_3_sector_gap.png,18,Moderate - sector-specific insights
+Sector Analysis,NL Specific,2,15.5,nl_sector_funding_vs_exits.png,16,Weak - small sample sizes per sector
+Sector Analysis,Time Series,1,14.0,nl_vc_investment_by_industry_year.png,14,Weak - too detailed for summary
+Sector Analysis,EDA Distribution,2,12.0,sector_distribution.png,13,Reference only
+Investor Mix,Funding Type,3,17.3,diversity_vs_outcomes.png,20,Moderate - diversity correlation
+Investor Mix,Country Comparison,1,17.0,funding_diversity_by_country.png,17,Moderate supporting
+Investor Mix,NL Specific,1,14.0,nl_diversity_outcomes.png,14,Weak - NL-specific diversity
+Investor Mix,EDA Distribution,1,12.0,funding_type_distributions.png,12,Reference only
+Geographic,NL Specific,2,15.0,finding5_regional_nl.png,15,Weak - negative finding (no effect)
+Geographic,EDA Distribution,2,13.0,country_distribution.png,13,Reference only
+Time Series,Trends Over Time,1,17.0,finding8_time_series_trends.png,17,Moderate - shows growth trajectory
+Time Series,EDA Distribution,1,12.0,year_distributions.png,12,Reference only
+Policy,Recommendations,2,17.5,sq2_priority_ranking.png,20,Moderate - useful for recommendations
+Policy,Historical,1,14.0,finding4_international_timeline.png,14,Weak - not your data analysis
+EDA,Correlation,1,14.0,correlation_heatmap.png,14,Reference only - variable relationships
