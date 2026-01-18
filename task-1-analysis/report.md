@@ -18,15 +18,15 @@ Dutch Seed→Series A conversion is **6.2%**—below European peers UK/Germany/F
 
 ![Graduation Gap](figures/finding1_graduation_gap.png)
 
-### 2. Rounds Matter More Than Amount
+### 2. The Sweet Spot is 3-4 Rounds
 
-Companies with 4+ funding rounds have **2x better acquisition rates** (10.9% vs 5.5%). Each round represents external validation. Companies raising 300x more money see only 4pp better outcomes—capital alone doesn't fix the problem.
+There's an optimal number of funding rounds: **3-4 rounds = 11.4% acquisition** vs 6.2% for 1-2 rounds. But more isn't always better—companies with 5+ rounds see diminishing returns (9.1%). Each round adds validation, but excessive raising may signal inability to reach profitability.
 
 ![Rounds Matter](figures/finding2_rounds_matter.png)
 
-### 3. Slow Starters Win
+### 3. Patient Companies Win (But Not Forever)
 
-Companies that bootstrapped 3+ years before first funding have **1.6x better outcomes** (9.9% vs 6.3%). This contradicts the "move fast" narrative.
+Companies bootstrapping **5-7 years** before raising have the best outcomes (~10.6% acquisition vs 6.3% for <1 year). But waiting too long also hurts—after 7 years, rates decline. The "move fast" narrative is wrong, but so is "wait forever".
 
 ![Tortoise Effect](figures/finding3_tortoise_effect.png)
 
