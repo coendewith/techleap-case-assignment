@@ -14,7 +14,7 @@ Analyzing 48,000 companies globally (305 Dutch), I found three patterns that cha
 
 ### 1. The Graduation Gap
 
-Dutch Seed→Series A conversion is **6.2%** vs 16.1% USA. Only 6 of 97 Dutch seed companies reached Series A. The bottleneck isn't seed funding—it's what happens in the 12-24 months after.
+Dutch Seed→Series A conversion is **6.2%**—below European peers UK/Germany/France (9.0%) and far behind USA (15.8%) and Israel (21.4%). Only 6 of 97 Dutch seed companies reached Series A. The bottleneck isn't seed funding—it's what happens in the 12-24 months after.
 
 ![Graduation Gap](figures/finding1_graduation_gap.png)
 
