@@ -10,19 +10,25 @@ What patterns explain why Dutch startups struggle to scale?
 
 ## The Answer: It's Not About Money
 
-Analyzing 49,000 companies globally (307 Dutch), I found four patterns that challenge conventional thinking:
+Analyzing 48,000 companies globally (305 Dutch), I found three patterns that challenge conventional thinking:
 
 ### 1. The Graduation Gap
+
 Dutch Seed→Series A conversion is **6.2%** vs 16.1% USA. Only 6 of 97 Dutch seed companies reached Series A. The bottleneck isn't seed funding—it's what happens in the 12-24 months after.
 
-### 2. Capital Doesn't Fix It
-Companies raising 300x more money see only 4 percentage points better outcomes. Beyond ~$300K, more capital doesn't help. This suggests founder quality matters more than funding size.
+![Graduation Gap](figures/finding1_graduation_gap.png)
 
-### 3. Rounds Matter More Than Amount
-Companies with 4+ funding rounds have **2x better acquisition rates** (10.9% vs 5.5%). Each round represents external validation—proof that others believe in the company.
+### 2. Rounds Matter More Than Amount
 
-### 4. Slow Starters Win
+Companies with 4+ funding rounds have **2x better acquisition rates** (10.9% vs 5.5%). Each round represents external validation. Companies raising 300x more money see only 4pp better outcomes—capital alone doesn't fix the problem.
+
+![Rounds Matter](figures/finding2_rounds_matter.png)
+
+### 3. Slow Starters Win
+
 Companies that bootstrapped 3+ years before first funding have **1.6x better outcomes** (9.9% vs 6.3%). This contradicts the "move fast" narrative.
+
+![Tortoise Effect](figures/finding3_tortoise_effect.png)
 
 ---
 
@@ -36,17 +42,17 @@ Companies that bootstrapped 3+ years before first funding have **1.6x better out
 
 ## What I Can't Tell You
 
-- **Data ends 2014** — ecosystem has changed
+- **Data ends 2014** — ecosystem has changed significantly
 - **Small Dutch sample (n=97 seed)** — directional, not definitive
-- **No founder data** — may be the actual success driver
+- **No founder data** — team quality may be the actual success driver
 - **No exit valuations** — acquisition ≠ good outcome
 
 ---
 
 ## Who I'd Want to Talk To
 
-- Series A investors — Why do they pass on Dutch seed companies?
-- Founders who failed at Seed→A — What support was missing?
+- **Series A investors** — Why do they pass on Dutch seed companies?
+- **Founders who failed at Seed→A** — What support was missing?
 
 ---
 
