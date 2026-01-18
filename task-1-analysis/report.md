@@ -18,21 +18,23 @@ Dutch Seed→Series A conversion is **6.2%**—below European peers UK/Germany/F
 
 ![Graduation Gap](figures/finding1_graduation_gap.png)
 
-### 2. The Sweet Spot is 3-4 Rounds
+### 2. More Rounds = Better Outcomes (But NL Doesn't Get There)
 
-There's an optimal number of funding rounds: **3-4 rounds = 11.4% acquisition** vs 6.2% for 1-2 rounds. But more isn't always better—companies with 5+ rounds see diminishing returns (9.1%). Each round adds validation, but excessive raising may signal inability to reach profitability.
+Companies that complete more funding rounds have better outcomes—globally. At 3+ rounds, acquisition rates jump to 10-12% across all markets. The NL problem: **few Dutch companies ever reach 3+ rounds**. USA has 12% success at 4+ rounds; NL companies rarely get there. The gap isn't capability—it's completion.
 
 ![Rounds Matter](figures/finding2_rounds_matter.png)
 
-### 3. Patient Companies Win (But Not Forever)
+### 3. Rushing Hurts Everyone—But NL Most
 
-Companies bootstrapping **5-7 years** before raising have the best outcomes (~10.6% acquisition vs 6.3% for <1 year). But waiting too long also hurts—after 7 years, rates decline. The "move fast" narrative is wrong, but so is "wait forever".
+Companies that rush to raise funding (<2 years) underperform everywhere. But the penalty is steepest in NL: only **2% acquisition** for rushed companies vs 8% in USA/Israel. Patient companies (5+ years before raising) hit 13% in NL—competitive with peers. **The data says: don't push founders to raise too early.**
 
 ![Tortoise Effect](figures/finding3_tortoise_effect.png)
 
 ---
 
 ## How Others Solved This
+
+![Policy Timeline](figures/finding4_international_timeline.png)
 
 ### Israel: From 6% to 21% Seed→A (The Yozma Model)
 
