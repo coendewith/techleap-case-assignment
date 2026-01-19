@@ -233,7 +233,7 @@ Table fact_publications {
 
 ## How would you actually run this?
 
-I'd advocate for tooling that minimizes custom infrastructure.
+I'd use tooling that minimizes custom infrastructure.
 
 ### Stack recommendation
 
@@ -283,11 +283,11 @@ WITH ranked AS (
 SELECT * FROM ranked WHERE rn = 1
 ```
 
-2. **Entity resolution for investors**: Normalize names in staging (`LOWER()`, `TRIM()`, strip suffixes like "B.V."), then use a seed file or lookup table to map variations to a canonical `investor_uuid`.
+2. **Matching investor names**: Clean up names in staging (`LOWER()`, `TRIM()`, strip suffixes like "B.V."), then use a lookup table to map variations like "Peak Capital" and "peak capital B.V." to the same `investor_uuid`.
 
 ### Data quality
 
-dbt tests enforce constraints declaratively. Example `schema.yml`:
+dbt tests check data quality automatically. Example `schema.yml`:
 
 ```yaml
 models:
