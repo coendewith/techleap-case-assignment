@@ -1,170 +1,152 @@
 # Data Engineering Design
 
-**Task**: Structure Dealroom's NDJSON data (35-40GB) for SQL-based analysis.
+**Task**: Structure Dealroom's daily NDJSON exports (35-40GB, 4 files) for SQL-based analysis.
 
 ---
 
-## The Challenge
+## The Data
 
-Dealroom data looks like this:
+Each record looks like this:
+
 ```json
 {
   "company_id": "abc123",
   "name": "TechStartup B.V.",
-  "industries": ["logistics", "ai"],
+  "industries": ["logistics", "artificial-intelligence"],
+  "founding_date": "2018-03-15",
   "employee_count": 85,
   "total_funding_eur": 12500000,
   "funding_rounds": [
     {"date": "2019-06-01", "type": "seed", "amount_eur": 500000},
     {"date": "2023-09-01", "type": "series-b", "amount_eur": 8000000}
   ],
-  "investors": [{"name": "Peak Capital", "type": "vc", "lead": true}]
+  "investors": [{"name": "Peak Capital", "type": "vc", "lead": true}],
+  "headquarters": {"city": "Amsterdam", "country": "Netherlands"},
+  "updated_at": "2024-01-15T08:30:00Z"
 }
 ```
 
-**Three problems to solve:**
-1. Nested arrays (funding_rounds, investors) → SQL doesn't like nested data
-2. Track changes over time → Employee count changes, funding totals grow
-3. Keep it simple → Small team can't maintain 15 tables
+---
+
+## How would you model this for SQL-based analysis?
+
+I would split the data into separate tables using common identifiers (UUIDs).
+
+Based on the sample data, I would create the following tables:
+
+### Table 1: dim_company
+
+| Column | Type | Description |
+|--------|------|-------------|
+| company_uuid | varchar | Primary key |
+| name | varchar | Company name |
+| industries | varchar[] | Array of industry tags |
+| founding_date | date | When founded |
+| employee_count | int | Current headcount |
+| total_funding_eur | decimal | Cumulative funding |
+| hq_city | varchar | Headquarters city |
+| hq_country | varchar | Headquarters country |
+| updated_at | timestamp | Source system timestamp |
+| valid_from | timestamp | When this version became active |
+| valid_to | timestamp | When superseded (NULL if current) |
+| is_current | boolean | TRUE for latest version |
+
+### Table 2: fact_funding
+
+| Column | Type | Description |
+|--------|------|-------------|
+| funding_uuid | varchar | Primary key |
+| company_uuid | varchar | FK → dim_company |
+| investor_uuid | varchar | FK → dim_investor |
+| funding_date | date | Round date |
+| funding_type | varchar | seed, series-a, series-b, etc. |
+| amount_eur | decimal | Amount raised |
+
+### Table 3: dim_investor
+
+| Column | Type | Description |
+|--------|------|-------------|
+| investor_uuid | varchar | Primary key |
+| investor_name | varchar | e.g., "Peak Capital" |
+| investor_type | varchar | vc, angel, corporate, etc. |
+| is_lead | boolean | Lead investor in the round |
 
 ---
 
-## My Approach: Star Schema (4 Tables)
+## How would you handle the nested arrays (funding_rounds, investors)?
 
-```
-┌─────────────────────┐       ┌─────────────────────┐
-│    dim_companies    │       │      dim_date       │
-│  (SCD Type 2)       │       │                     │
-├─────────────────────┤       ├─────────────────────┤
-│ company_sk (PK)     │       │ date_sk (PK)        │
-│ company_id          │       │ full_date           │
-│ name                │       │ year, quarter, month│
-│ industries []       │       └─────────────────────┘
-│ employee_count      │
-│ total_funding_eur   │
-│ city, country       │
-│ valid_from          │──┐
-│ valid_to            │  │
-│ is_current          │  │
-└─────────────────────┘  │
-         │               │
-         │ 1:N           │
-         ▼               │
-┌─────────────────────┐  │
-│ fact_funding_rounds │  │
-├─────────────────────┤  │
-│ funding_sk (PK)     │  │
-│ company_sk (FK) ────┼──┘
-│ round_date          │
-│ round_type          │
-│ amount_eur          │
-│ investors [] (JSON) │
-└─────────────────────┘
-```
+For ease of querying, there should be a separate table for company data, funding data, and investor data.
+
+- For investors: create an `investor_uuid` to uniquely identify each investor
+- For funding data: create a `funding_uuid`, but also include the `company_uuid` and `investor_uuid` as foreign keys
+
+This way, a single funding round with multiple investors becomes multiple rows in `fact_funding`—one per investor. This allows queries like "all rounds where Peak Capital participated."
 
 ---
 
-## Why This Design?
+## What if we want to track how companies change over time?
 
-### Decision 1: Flatten funding_rounds into a fact table
+`dim_company` should have an `is_current` boolean where the most recent record is set to `TRUE` and all old records are set to `FALSE`.
 
-**Problem**: Can't query nested arrays in SQL
-**Solution**: One row per funding round
+This way we:
+- Maintain historical records
+- Can track changes such as total funding, headquarters city/country, and even name changes
+- Always know which record is the current state
 
-```sql
--- Now I can easily ask: "Show all Series A rounds in 2023"
-SELECT * FROM fact_funding_rounds
-WHERE round_type = 'series-a' AND YEAR(round_date) = 2023
-```
-
-### Decision 2: Keep investors as JSON array (not a separate table)
-
-**Trade-off**:
-- ✅ Simple—no bridge table complexity
-- ❌ Can't easily get "all deals by Investor X"
-
-**Why acceptable**: Most analysis is company-centric, not investor-centric. If investor analytics become critical, add a bridge table later.
-
-### Decision 3: SCD Type 2 on companies (track history)
-
-**Problem**: "What was company X's employee count when they raised Series A?"
-**Solution**: Store snapshots with valid_from/valid_to dates
-
-```sql
--- Find company state at time of funding
-SELECT c.name, c.employee_count, f.amount_eur
-FROM dim_companies c
-JOIN fact_funding_rounds f ON c.company_sk = f.company_sk
-WHERE f.round_date BETWEEN c.valid_from AND c.valid_to
-```
+When Dealroom sends updated data:
+1. Compare to existing records
+2. If anything changed, insert a new row with `is_current = TRUE`
+3. Mark the old row as `is_current = FALSE` and set `valid_to` to the current timestamp
 
 ---
 
-## How to Load It (dbt)
+## How would you integrate additional data sources?
 
-```
-dealroom_raw.ndjson
-       │
-       ▼
-┌──────────────┐    ┌──────────────┐    ┌──────────────┐
-│ stg_companies│───▶│dim_companies │───▶│    dbt       │
-│              │    │  (snapshot)  │    │  snapshots   │
-└──────────────┘    └──────────────┘    └──────────────┘
-       │
-       ▼
-┌──────────────┐
-│stg_funding   │───▶ LATERAL FLATTEN (investors array)
-│   _rounds    │
-└──────────────┘
-```
+For patents, scientific publications, and news articles, I would create dedicated tables:
 
-**dbt snapshots** handle SCD Type 2 automatically—no manual SQL needed.
+### dim_patents
 
----
+| Column | Type | Description |
+|--------|------|-------------|
+| patent_uuid | varchar | Primary key |
+| company_uuid | varchar | FK → dim_company |
+| patent_office | varchar | USPTO, EPO, etc. |
+| patent_date | date | Filing/grant date |
+| is_pending | boolean | Pending vs granted |
+| updated_at | timestamp | Last update |
+| is_current | boolean | For tracking changes |
 
-## Extending for Additional Data Sources
+### fact_news_articles
 
-**Patent filings, publications, news articles?**
+| Column | Type | Description |
+|--------|------|-------------|
+| article_uuid | varchar | Primary key |
+| company_uuid | varchar | FK → dim_company |
+| article_date | date | Publication date |
+| news_outlet | varchar | Source name |
+| sentiment_score | decimal | -1 to +1 sentiment |
 
-Add a `fact_external_mentions` table:
+### fact_publications
 
-```
-┌─────────────────────┐
-│ fact_external_      │
-│     mentions        │
-├─────────────────────┤
-│ mention_sk (PK)     │
-│ company_sk (FK)     │  ← Link to dim_companies
-│ source_type         │  ← "patent", "publication", "news"
-│ mention_date        │
-│ title               │
-│ url                 │
-│ sentiment_score     │
-└─────────────────────┘
-```
-
-**Challenge**: Matching unstructured mentions to companies.
-**Solution**: Fuzzy matching on company names using pg_trgm (PostgreSQL) or similar.
+| Column | Type | Description |
+|--------|------|-------------|
+| publication_uuid | varchar | Primary key |
+| company_uuid | varchar | FK → dim_company |
+| publication_date | date | Publication date |
+| title | varchar | Paper title |
+| source | varchar | Journal/conference |
 
 ---
 
-## Trade-offs Summary
+## Trade-offs
 
-| I Chose | Over | Because |
-|---------|------|---------|
-| 4 tables | 7+ tables with bridges | Small team can actually maintain it |
-| JSON arrays for investors | Separate investor dimension | Most queries are company-centric |
-| SCD Type 2 | Full Data Vault | Tracks history without enterprise complexity |
-| Star schema | One Big Table | Need temporal queries the OBT can't handle |
-
----
-
-## What I'd Ask Before Building
-
-1. **Top 5 analyst questions?** → Drives indexing choices
-2. **Need investor-level rollups?** → Determines if bridge table is needed
-3. **How far back for history?** → Affects snapshot retention
-4. **Who maintains this?** → Team size determines complexity ceiling
+| Decision | Alternative | Why I Chose This |
+|----------|-------------|------------------|
+| Separate `dim_investor` table | Keep investors as JSON array | Enables "all deals by Investor X" queries |
+| No `dim_date` table | Traditional date dimension | Modern warehouses handle date functions natively |
+| SCD Type 2 for companies | Overwrite with latest data | Need to track how companies change over time |
+| Separate tables per data source | Generic catch-all table | Each source has unique attributes (patents have `is_pending`, news has `sentiment_score`) |
+| UUIDs as keys | Auto-increment integers | Portable across systems, no collision risk |
 
 ---
 
