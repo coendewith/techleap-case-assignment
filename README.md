@@ -10,7 +10,7 @@
 techleap/
 ├── README.md                    # This file
 ├── tools.md                     # Tool choices + AI disclosure
-├── investments_VC.csv           # Source data (48K companies)
+├── investments_VC.csv           # Source data (see Data Source below)
 │
 ├── task-1-analysis/             # DELIVERABLES
 │   ├── Analysis_Deck.pdf        # Main deliverable - slide deck
@@ -51,6 +51,12 @@ jupyter notebook analysis.ipynb
 |------|-------------|
 | [design-doc.md](task-2-design/design-doc.md) | Data model design |
 | [data-model.png](task-2-design/data-model.png) | Visual diagram |
+
+---
+
+## Data Source
+
+[Startup Investments (Crunchbase)](https://www.kaggle.com/datasets/arindam235/startup-investments-crunchbase) from Kaggle — 54,000+ companies, 2005-2014 cohort.
 
 ---
 
