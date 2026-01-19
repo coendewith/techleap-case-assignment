@@ -150,4 +150,71 @@ For patents, scientific publications, and news articles, I would create dedicate
 
 ---
 
+## Data Model Diagram
+
+![Data Model](data-model.png)
+
+```dbml
+// Core tables
+Table dim_company {
+  company_uuid varchar [pk]
+  name varchar
+  industries "varchar[]"
+  founding_date date
+  employee_count int
+  total_funding_eur decimal
+  hq_city varchar
+  hq_country varchar
+  updated_at timestamp
+  valid_from timestamp
+  valid_to timestamp
+  is_current boolean
+}
+
+Table dim_investor {
+  investor_uuid varchar [pk]
+  investor_name varchar
+  investor_type varchar
+  is_lead boolean
+}
+
+Table fact_funding {
+  funding_uuid varchar [pk]
+  company_uuid varchar [ref: > dim_company.company_uuid]
+  investor_uuid varchar [ref: > dim_investor.investor_uuid]
+  funding_date date
+  funding_type varchar
+  amount_eur decimal
+}
+
+// Additional data sources
+Table dim_patents {
+  patent_uuid varchar [pk]
+  company_uuid varchar [ref: > dim_company.company_uuid]
+  patent_office varchar
+  patent_date date
+  is_pending boolean
+  updated_at timestamp
+  is_current boolean
+}
+
+Table fact_news_articles {
+  article_uuid varchar [pk]
+  company_uuid varchar [ref: > dim_company.company_uuid]
+  article_date date
+  news_outlet varchar
+  sentiment_score decimal
+}
+
+Table fact_publications {
+  publication_uuid varchar [pk]
+  company_uuid varchar [ref: > dim_company.company_uuid]
+  publication_date date
+  title varchar
+  source varchar
+}
+```
+
+---
+
 *A simple solution that works beats a complex solution that doesn't get built.*
