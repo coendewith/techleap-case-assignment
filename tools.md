@@ -8,14 +8,14 @@
 | **Analysis** | Python + Pandas | High versatility and customization, quick for code generation, and the language I'm most comfortable with |
 | **Notebook** | Jupyter | Reproducibility (run cells top-to-bottom, same results), narrative flow (interleave code, output, and explanation), and easy to review—unlike scripts where you'd need to run code and read comments separately |
 | **Visualization** | Matplotlib | Publication-quality static charts, fine-grained control over styling and high customizability |
-| **IDE** | VS Code + Claude Code (Claude Opus 4.5) | Claude Opus is currently the most productive model based on own experiecne and for agentic coding as seen livebench.ai |
+| **IDE** | VS Code + Claude Code (Claude Opus 4.5) | Claude Opus is currently the most productive model based on own experience and for agentic coding as seen on livebench.ai |
 | **Design Tasks** | Gemini 2.5 Pro | For design-related tasks, high-thinking models outperform on visual/layout decisions |
 | **Data Model Diagrams** | Mermaid + dbdiagram.io | Text-based, version-controllable |
 
 ## Why Not Other Tools?
 
-- **Excel**: Not reproducible, low flexibillty in making graphs
-- **Gsheets for graohs and descriptive statistic**: more manual work, not flexible
+- **Excel**: Not reproducible, low flexibility in making graphs
+- **Google Sheets for graphs and descriptive statistics**: more manual work, not flexible
 - **R**: Equally capable, but Python has broader ecosystem and I'm faster in it
 - **Plotly**: Considered for interactivity, but static charts were cleaner for the PDF report
 
@@ -27,7 +27,7 @@
 |-------------|-----|
 | Initial data cleaning steps | Faster pipeline development |
 | Quickly generating charts based on proposed ideas | Rapid iteration on visualizations |
-| Code cleanup + brainstorimign text | Focus time on analysis, not formatting |
+| Code cleanup + brainstorming text | Focus time on analysis, not formatting |
 | Policy research | Finding international benchmark examples (Yozma, SEIS) |\
 | Git commits | Keeping track of changes quick git commits |
 
