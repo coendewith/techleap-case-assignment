@@ -82,7 +82,8 @@ The bottleneck isn't Dutch founders—they perform equally well at Series B. It'
 ## Limitations
 
 - Data ends in 2014; the ecosystem has evolved significantly
-- Small Dutch sample (~400 companies); results are directional, not definitive
+- Small Dutch sample (305 companies); results are directional, not definitive
+- Exit data only captures acquisitions, not IPOs (0 IPOs in dataset)
 - No founder-level data; team quality may drive outcomes
 - No exit valuations (an acquisition ≠ a good outcome)
 - Companies may relocate HQ between funding rounds
