@@ -51,6 +51,12 @@ From NL's 97 Seed-funded companies:
 
 1. **Co-invest with international VCs** — Israel's Yozma ($100M) grew VC market 60x in 7 years
 2. **Dutch SEIS tax relief** — UK's 50% tax relief is used in 90%+ of angel deals
+   - 50% income tax relief on investments up to £200,000/year
+   - Capital gains tax exemption if shares held 3+ years
+   - Loss relief offsets failed investments against income tax
+   - Companies must be <2 years old, raising max £250,000 via SEIS
+   - Significantly increased angel investor participation in the UK
+   - Reduced investor risk may lead to larger early-stage bets
 3. **Fix ESOP taxation** — Shift risk/reward toward high-growth bets
 
 ---
