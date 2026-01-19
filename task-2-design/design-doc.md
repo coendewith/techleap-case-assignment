@@ -233,4 +233,58 @@ Table fact_publications {
 
 ---
 
+## How would you actually run this?
+
+I'm primarily a SQL user, not a data engineer—so I'd advocate for tooling that minimizes custom infrastructure.
+
+### Stack recommendation
+
+| Layer | Tool | Why |
+|-------|------|-----|
+| Storage | BigQuery or Snowflake | Native JSON support, handles 35-40GB without tuning |
+| Transformation | dbt | Declarative SQL, built-in SCD2 snapshots, version control |
+| Orchestration | dbt Cloud or GitHub Actions | Daily schedule, alerting on failure, no server to manage |
+| Ingestion | Fivetran or custom Python script | Depends on how Dealroom delivers the files |
+
+### Daily pipeline flow
+
+```
+Dealroom NDJSON → Cloud Storage bucket → Load to raw table → dbt run → Analytics tables
+```
+
+1. **Raw ingestion**: Load NDJSON files into a single `raw_companies` table with a VARIANT/JSON column
+2. **Staging**: dbt model flattens JSON, applies data quality filters, normalizes values
+3. **Dimensions**: dbt snapshot handles SCD Type 2 for `dim_company` automatically
+4. **Facts**: Flatten `funding_rounds[]` array into `fact_funding_round`, link investors via participation table
+
+### Change detection
+
+For SCD Type 2, I'd use dbt's `snapshot` feature with `updated_at` as the strategy. When Dealroom's `updated_at` changes, dbt automatically:
+- Sets `valid_to` on the old record
+- Inserts a new row with `is_current = TRUE`
+
+No custom stored procedures needed.
+
+### Data quality
+
+Handled in the staging layer:
+
+| Check | Action |
+|-------|--------|
+| `company_id IS NULL` | Reject row |
+| `employee_count > 10,000,000` | Set to NULL (clearly wrong) |
+| `funding_amount < 0` | Set to NULL |
+| Duplicate `company_id` in same batch | Keep latest by `updated_at` |
+
+### What I'd skip
+
+| Approach | Why not |
+|----------|---------|
+| Streaming/CDC | Case says daily batch; streaming adds complexity for no benefit |
+| Custom Airflow DAGs | dbt Cloud handles scheduling; fewer moving parts |
+| Data Vault | 3-6 month implementation for a small team is overkill |
+| Kubernetes | Managed services exist; don't run your own infrastructure |
+
+---
+
 *A simple solution that works beats a complex solution that doesn't get built.*
