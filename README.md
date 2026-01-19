@@ -13,7 +13,9 @@ techleap/
 ├── investments_VC.csv           # Source data (48K companies)
 │
 ├── task-1-analysis/             # DELIVERABLES
-│   ├── report.md                # Executive briefing
+│   ├── Analysis_Deck.pdf        # Main deliverable - slide deck
+│   ├── Analysis_2pager.pdf      # Optional: 2-page executive summary
+│   ├── report.md                # Optional: markdown version
 │   ├── analysis.ipynb           # Full analysis notebook
 │   └── figures/                 # Visualizations
 │
@@ -28,7 +30,9 @@ techleap/
 
 | File | Description |
 |------|-------------|
-| [report.md](task-1-analysis/report.md) | Executive briefing |
+| [Analysis_Deck.pdf](task-1-analysis/Analysis_Deck.pdf) | **Main deliverable** - slide deck |
+| [Analysis_2pager.pdf](task-1-analysis/Analysis_2pager.pdf) | Optional: 2-page executive summary |
+| [report.md](task-1-analysis/report.md) | Optional: markdown version |
 | [analysis.ipynb](task-1-analysis/analysis.ipynb) | Full analysis notebook |
 
 ### How to Run
