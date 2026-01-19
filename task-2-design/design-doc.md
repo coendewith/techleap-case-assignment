@@ -235,7 +235,7 @@ Table fact_publications {
 
 ## How would you actually run this?
 
-I'm primarily a SQL user, not a data engineer—so I'd advocate for tooling that minimizes custom infrastructure.
+I'd advocate for tooling that minimizes custom infrastructure.
 
 ### Stack recommendation
 
