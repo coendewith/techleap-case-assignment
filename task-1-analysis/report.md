@@ -11,7 +11,7 @@ Benchmark the Netherlands against EU peers (France, UK, Germany) and global tech
 
 ---
 
-## Finding 1: The Valley of Death
+## Finding 1: Dutch startups drop off before they can scale
 
 **Dutch startups fail to convert Seed → Series A at half the rate of peers**
 
@@ -62,7 +62,7 @@ Every year, 9 potential scale-ups fall into the Valley of Death.
 
 ## Recommendations
 
-### 1. Bridge the Valley of Death
+### 1. Co-invest with international VCs to bridge the funding gap
 **What works:** Israel's Yozma program ($100M, required foreign VC partners) grew their VC market 60x in 7 years.
 
 **Action:** Co-invest with private VCs in post-seed companies
