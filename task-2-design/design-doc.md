@@ -51,19 +51,27 @@ Based on the sample data, I would create the following tables:
 | valid_to | timestamp | When superseded (NULL if current) |
 | is_current | boolean | TRUE for latest version |
 
-### Table 2: fact_funding
+### Table 2: fact_funding_round
 
 | Column | Type | Description |
 |--------|------|-------------|
-| funding_uuid | varchar | Primary key |
+| funding_round_uuid | varchar | Primary key |
 | company_uuid | varchar | FK → dim_company |
-| investor_uuid | varchar | FK → dim_investor |
 | funding_date | date | Round date |
 | funding_type | varchar | seed, series-a, series-b, etc. |
-| amount_eur | decimal | Amount raised |
+| amount_eur | decimal | Total amount raised in round |
+
+### Table 3: fact_funding_participation
+
+| Column | Type | Description |
+|--------|------|-------------|
+| participation_uuid | varchar | Primary key |
+| funding_round_uuid | varchar | FK → fact_funding_round |
+| investor_uuid | varchar | FK → dim_investor |
+| amount_eur | decimal | This investor's contribution (if known) |
 | is_lead | boolean | Lead investor in this round |
 
-### Table 3: dim_investor
+### Table 4: dim_investor
 
 | Column | Type | Description |
 |--------|------|-------------|
@@ -75,12 +83,13 @@ Based on the sample data, I would create the following tables:
 
 ## How would you handle the nested arrays (funding_rounds, investors)?
 
-For ease of querying, there should be a separate table for company data, funding data, and investor data.
+For ease of querying, there should be separate tables for company data, funding rounds, investor participation, and investor data.
 
+- For funding rounds: create a `funding_round_uuid` to uniquely identify each round, linked to the company
 - For investors: create an `investor_uuid` to uniquely identify each investor
-- For funding data: create a `funding_uuid`, but also include the `company_uuid` and `investor_uuid` as foreign keys
+- For participation: create a junction table `fact_funding_participation` linking rounds to investors
 
-This way, a single funding round with multiple investors becomes multiple rows in `fact_funding`—one per investor. This allows queries like "all rounds where Peak Capital participated."
+This way, a single funding round with multiple investors has one row in `fact_funding_round` and multiple rows in `fact_funding_participation`—one per investor. This allows queries like "all rounds where Peak Capital participated" while preserving the concept of a round as a single event.
 
 ---
 
@@ -143,6 +152,7 @@ For patents, scientific publications, and news articles, I would create dedicate
 | Decision | Alternative | Why I Chose This |
 |----------|-------------|------------------|
 | Separate `dim_investor` table | Keep investors as JSON array | Enables "all deals by Investor X" queries |
+| Separate `fact_funding_round` + `fact_funding_participation` | Single denormalized funding table | Preserves the concept of a "round" as a single event; cleaner queries for round counts |
 | No `dim_date` table | Traditional date dimension | Modern warehouses handle date functions natively |
 | SCD Type 2 for companies | Overwrite with latest data | Need to track how companies change over time |
 | Separate tables per data source | Generic catch-all table | Each source has unique attributes (patents have `is_pending`, news has `sentiment_score`) |
@@ -177,12 +187,18 @@ Table dim_investor {
   investor_type varchar
 }
 
-Table fact_funding {
-  funding_uuid varchar [pk]
+Table fact_funding_round {
+  funding_round_uuid varchar [pk]
   company_uuid varchar [ref: > dim_company.company_uuid]
-  investor_uuid varchar [ref: > dim_investor.investor_uuid]
   funding_date date
   funding_type varchar
+  amount_eur decimal
+}
+
+Table fact_funding_participation {
+  participation_uuid varchar [pk]
+  funding_round_uuid varchar [ref: > fact_funding_round.funding_round_uuid]
+  investor_uuid varchar [ref: > dim_investor.investor_uuid]
   amount_eur decimal
   is_lead boolean
 }
