@@ -61,6 +61,7 @@ Based on the sample data, I would create the following tables:
 | funding_date | date | Round date |
 | funding_type | varchar | seed, series-a, series-b, etc. |
 | amount_eur | decimal | Amount raised |
+| is_lead | boolean | Lead investor in this round |
 
 ### Table 3: dim_investor
 
@@ -69,7 +70,6 @@ Based on the sample data, I would create the following tables:
 | investor_uuid | varchar | Primary key |
 | investor_name | varchar | e.g., "Peak Capital" |
 | investor_type | varchar | vc, angel, corporate, etc. |
-| is_lead | boolean | Lead investor in the round |
 
 ---
 
@@ -175,7 +175,6 @@ Table dim_investor {
   investor_uuid varchar [pk]
   investor_name varchar
   investor_type varchar
-  is_lead boolean
 }
 
 Table fact_funding {
@@ -185,6 +184,7 @@ Table fact_funding {
   funding_date date
   funding_type varchar
   amount_eur decimal
+  is_lead boolean
 }
 
 // Additional data sources
