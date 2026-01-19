@@ -1,141 +1,93 @@
-# Dutch Startup Ecosystem: What the Data Tells Us
-
-**Briefing for Ministry of Economic Affairs** | January 2026
-
----
-
-## The Question
-
-What patterns explain why Dutch startups struggle to scale—and what can we learn from countries that solved this?
-
-## The Answer: It's Not About Money
-
-Analyzing 48,000 companies globally (305 Dutch), I found three patterns that challenge conventional thinking:
-
-### 1. The Graduation Gap
-
-Dutch Seed→Series A conversion is **6.2%**—below European peers UK/Germany/France (9.0%) and far behind USA (15.8%) and Israel (21.4%). Only 6 of 97 Dutch seed companies reached Series A. The bottleneck isn't seed funding—it's what happens in the 12-24 months after.
-
-![Graduation Gap](figures/finding1_graduation_gap.png)
-
-### 2. More Rounds = Better Outcomes (But NL Doesn't Get There)
-
-Companies that complete more funding rounds have better outcomes—globally. At 3+ rounds, acquisition rates jump to 10-12% across all markets. The NL problem: **few Dutch companies ever reach 3+ rounds**. USA has 12% success at 4+ rounds; NL companies rarely get there. The gap isn't capability—it's completion.
-
-![Rounds Matter](figures/finding2_rounds_matter.png)
-
-### 3. Rushing Hurts Everyone—But NL Most
-
-Companies that rush to raise funding (<2 years) underperform everywhere. But the penalty is steepest in NL: only **2% acquisition** for rushed companies vs 8% in USA/Israel. Patient companies (5+ years before raising) hit 13% in NL—competitive with peers. **The data says: don't push founders to raise too early.**
-
-![Tortoise Effect](figures/finding3_tortoise_effect.png)
+# Dutch Startup Ecosystem Analysis
+### Policy Briefing for the Ministry of Economic Affairs
 
 ---
 
-## How Others Solved This
+**Research Question**
+What can policymakers do to support the startup ecosystem?
 
-![Policy Timeline](figures/finding4_international_timeline.png)
-
-### Israel: From 6% to 21% Seed→A (The Yozma Model)
-
-In 1993, Israel faced the same problem: promising startups couldn't scale. The government invested $100M into 10 private VC funds—but with a twist:
-
-- Each fund required **foreign VC partners** (expertise transfer)
-- Government took 40% stake with **buyout option at 5 years**
-- Result: 9/10 funds bought out government → **full privatization**
-
-**Outcome**: VC investment grew 60x ($58M → $3.3B), Israel became #2 globally.
-
-**Why it worked**: Government catalyzed, then got out of the way. Brought expertise, not just money.
-
-### UK: Making Angel Investing Rational (SEIS/EIS)
-
-The UK created tax incentives that now drive **90%+ of all angel investments**:
-
-- **50% income tax relief** on seed investments (SEIS)
-- **Capital gains exemption** if shares held 3+ years
-
-**Outcome**: UK became "one of the most consistently liquid early-stage markets in the world."
-
-**Why it worked**: Made high-risk investing rational through predictable tax treatment.
-
-### Singapore: Strategic Co-Investment
-
-Singapore's SEEDS Capital **co-invests with private VCs**, never leads. Result: jumped to **#4 globally** in 2025 with 44.9% ecosystem growth.
-
-**Why it worked**: Government follows smart money, doesn't try to pick winners.
+**Approach**
+Benchmark the Netherlands against EU peers (France, UK, Germany) and global tech hubs (USA, Israel) using Crunchbase data on 48,000+ VC-backed companies (2005-2014 cohort).
 
 ---
 
-## What Doesn't Work
+## Finding 1: The Valley of Death
 
-| Policy Failure | Why It Fails | Data Evidence |
-|----------------|--------------|---------------|
-| **Grant-heavy models** | No "smart money" (advice, networks) | Grant-backed companies: 2.8% acquisition (worst) |
-| **Picking winners** | Excludes early-stage companies | Support goes to proven companies, not those who need it |
-| **Spreading thin** | No company gets enough support | 3-4 rounds optimal; help companies reach this |
-| **More money without matching** | Capital alone doesn't fix it | 300x more funding = only 4pp better outcomes |
+**Dutch startups fail to convert Seed → Series A at half the rate of peers**
+
+| Region | Seed → A | A → B | B → C |
+|--------|----------|-------|-------|
+| Netherlands | 6.2% | 34.3% | 25.0% |
+| EU Peers | 9.2% | 38.1% | 33.3% |
+| USA | 16.1% | 42.9% | 41.0% |
+| Israel | 21.9% | 40.0% | 41.7% |
+
+The critical bottleneck is post-seed, not seed availability. NL's gap vs peers is largest at Seed→A (-9.6pp) and B→C (-16.6pp).
+
+![Chart 1: Full Funding Funnel](figures/finding1_funding_funnel.png)
 
 ---
 
-## The Netherlands Gap
+## Finding 2: Playing It Small
 
-| Metric | Netherlands | Best Practice | Source |
-|--------|-------------|---------------|--------|
-| Seed→A conversion | 6.2% | Israel: 21.4% | This analysis |
-| Scale-up ratio | 21.5% | USA: 54% | McKinsey |
-| Local funding share | 22% | USA: 78% | McKinsey |
-| ESOP ranking | Bottom quartile | Israel/USA: top | McKinsey |
+**Dutch startups raise less, risk less, and achieve less**
+
+| Metric | Netherlands | EU Peers | USA | Israel |
+|--------|-------------|----------|-----|--------|
+| Failure Rate | 4.3% | 5.5% | 5.1% | 7.0% |
+| Median Funding | $1.0M | $1.7M | $2.7M | $3.9M |
+| Exit Rate | 4.3% | 5.4% | 8.9% | 8.5% |
+
+Dutch startups have the lowest failure rate—which sounds positive. But combined with the lowest funding and the lowest exit rate, it suggests the ecosystem **plays it small**: fewer bold bets, fewer big outcomes.
+
+![Chart 2: Playing It Small](figures/finding2_playing_small.png)
+
+---
+
+## Finding 3: The Opportunity Cost
+
+**We're missing ~9 scale-ups per year**
+
+From NL's 97 Seed-funded companies:
+- **Current rate (6.2%):** 6 companies reach Series A
+- **If EU rate (9.2%):** 9 companies (+3)
+- **If USA rate (16.1%):** 15 companies (+9)
+- **If Israel rate (21.9%):** 21 companies (+15)
+
+Every year, 9 potential scale-ups fall into the Valley of Death.
+
+![Chart 3: The Opportunity Cost](figures/finding3_opportunity_cost.png)
 
 ---
 
 ## Recommendations
 
-### 1. Create a Dutch "Yozma"
+### 1. Bridge the Valley of Death
+**What works:** Israel's Yozma program ($100M, required foreign VC partners) grew their VC market 60x in 7 years.
 
-Co-invest in private VC funds **with foreign partners**. Include buyout option so government exits when successful. Focus on bringing expertise and networks, not just capital.
+**Action:** Co-invest with private VCs in post-seed companies
+**Target:** Improve Seed→A conversion from 6% to 15%
 
-### 2. Implement SEIS/EIS-Style Tax Relief
+### 2. Make Angel Investing Rational
+**What works:** UK's SEIS tax relief (50% on seed investments) is now used in 90%+ of angel deals.
 
-Make angel investing rational through predictable tax incentives. Current NL approach lacks the risk mitigation that drives 90%+ of UK angel deals.
+**Action:** Introduce Dutch SEIS equivalent (30-50% tax relief)
+**Why:** Currently high-risk = irrational. Tax relief = risk mitigation.
 
-### 3. Focus on the Seed→A Bridge
-
-The data shows NL loses companies in the 12-24 month post-seed window. Create dedicated support for this transition—mentorship, investor introductions, bridge financing.
-
-### 4. Help Companies Reach 3-4 Rounds
-
-The sweet spot is 3-4 funding rounds. Policy should help companies **complete rounds** (better matching), not just get more money per round.
-
-### 5. Fix ESOP Taxation
-
-NL ranks bottom quartile in Europe for employee stock options. This hurts talent attraction and founder incentives.
+### 3. Fix the Incentives
+The bottleneck isn't Dutch founders—they perform equally well at Series B. It's the lack of incentives to take early-stage risk. Tax relief for angels and smarter ESOP taxation would shift the risk/reward calculus toward high-growth bets.
 
 ---
 
-## What I Can't Tell You
+## Limitations
 
-- **Data ends 2014** — ecosystem has changed significantly
-- **Small Dutch sample (n=97 seed)** — directional, not definitive
-- **No founder data** — team quality may be the actual success driver
-- **No exit valuations** — acquisition ≠ good outcome
-
----
-
-## Who I'd Want to Talk To
-
-- **Series A investors** — Why do they pass on Dutch seed companies?
-- **Founders who failed at Seed→A** — What support was missing?
-- **Yozma architects** — How to adapt the model for NL?
+- Data ends in 2014; the ecosystem has evolved significantly
+- Small Dutch sample (~400 companies); results are directional, not definitive
+- No founder-level data; team quality may drive outcomes
+- No exit valuations (an acquisition ≠ a good outcome)
+- Companies may relocate HQ between funding rounds
 
 ---
 
-## Core Message
-
-> **The data shows Dutch startups don't fail from lack of capital—they fail from lack of the right support at the right time.** Israel, UK, and Singapore solved this by focusing on investor quality and knowledge transfer, not funding quantity. The Netherlands should do the same.
-
----
-
-*Analysis: Coen de With | Data: Crunchbase via Kaggle | Method: Python/Pandas*
-
-*For detailed policy research, see: [legacy/policy-research.md](../legacy/policy-research.md)*
+**Data:** Crunchbase, 48,163 companies, 2005-2014 first funding
+**Analysis:** See `analysis.ipynb` for full methodology and code
