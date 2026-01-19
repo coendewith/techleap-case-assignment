@@ -10,6 +10,7 @@
 techleap/
 ├── README.md                    # This file
 ├── tools.md                     # Tool choices + AI disclosure
+├── requirements.txt             # Python dependencies
 ├── investments_VC.csv           # Source data (see Data Source below)
 │
 ├── task-1-analysis/             # DELIVERABLES
@@ -38,9 +39,8 @@ techleap/
 ### How to Run
 
 ```bash
-pip install pandas matplotlib numpy jupyter
-cd task-1-analysis
-jupyter notebook analysis.ipynb
+pip install -r requirements.txt
+jupyter notebook task-1-analysis/analysis.ipynb
 ```
 
 ---
