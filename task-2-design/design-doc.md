@@ -154,7 +154,6 @@ For patents, scientific publications, and news articles, I would create dedicate
 | Separate `fact_funding_round` + `fact_funding_participation` | Single denormalized funding table | Preserves the concept of a "round" as a single event; cleaner queries for round counts |
 | No `dim_date` table | Traditional date dimension | Modern warehouses handle date functions natively |
 | SCD Type 2 for companies | Overwrite with latest data | Need to track how companies change over time |
-| Separate tables per data source | Generic catch-all table | Each source has unique attributes (patents have `is_pending`, news has `sentiment_score`) |
 | UUIDs as keys | Auto-increment integers | Portable across systems, no collision risk |
 
 ---
