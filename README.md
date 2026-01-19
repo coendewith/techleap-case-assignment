@@ -10,49 +10,43 @@
 techleap/
 ├── README.md                    # This file
 ├── tools.md                     # Tool choices + AI disclosure
-├── investments_VC.csv           # Source data
+├── investments_VC.csv           # Source data (48K companies)
 │
-├── task-1-analysis/             # ⭐ FINAL DELIVERABLES
-│   ├── report.md                # Executive briefing (1-2 pages)
-│   ├── analysis.ipynb           # Final analysis notebook (Tufte-style viz)
-│   └── figures/                 # 3 polished visualizations
+├── task-1-analysis/             # DELIVERABLES
+│   ├── report.pdf               # Executive briefing (1-2 pages)
+│   ├── analysis.ipynb           # Full analysis notebook
+│   └── figures/                 # Visualizations
 │
-├── task-2-design/               # ⭐ FINAL DELIVERABLES
+├── task-2-design/               # DELIVERABLES
 │   ├── design-doc.md            # Data model design document
 │   └── data-model.png           # Visual diagram
 │
-└── legacy/                      # 📊 EXPLORATORY (bonus, not required)
+└── legacy/                      # Working files (not required)
     └── task-1-analysis/
-        ├── analysis.ipynb       # Extended analysis (all countries, full funnel)
-        └── figures/             # 20+ exploratory visualizations
 ```
 
 ---
 
-## Task 1: Data Analysis (50%)
+## Task 1: Data Analysis
 
 ### Final Deliverables
 
 | File | Description |
 |------|-------------|
-| [report.md](task-1-analysis/report.md) | Executive briefing for Ministry of Economic Affairs |
-| [analysis.ipynb](task-1-analysis/analysis.ipynb) | Final notebook with Tufte-style visualizations |
-| [figures/](task-1-analysis/figures/) | 3 professional charts (colorblind-friendly) |
+| [report.pdf](task-1-analysis/report.pdf) | Executive briefing for Ministry of Economic Affairs |
+| [analysis.ipynb](task-1-analysis/analysis.ipynb) | Full analysis notebook with visualizations |
 
 ### Key Findings
 
-1. **Graduation Gap**: Dutch Seed→A is 6.2% vs 9.0% European peers (USA: 15.8%)
-2. **Rounds Matter**: 4+ rounds = 2x acquisition rate (capital alone doesn't fix it)
-3. **Tortoise Effect**: 3+ year bootstrap = 1.6x better outcomes
+1. **The Valley of Death**: Dutch Seed→A conversion is 6.2% vs EU peers 9.2%, USA 16.1%, Israel 21.9%
+2. **Playing It Small**: NL ranks last on failure rate (4.3%), median funding ($1.0M), and exit rate (4.3%)
+3. **The Opportunity Cost**: ~9 potential scale-ups lost per year due to lower conversion rates
 
-**Recommendation**: Help companies complete rounds, not just get more money.
+### Policy Recommendations
 
-### Visualization Style
-
-Charts use **Tufte principles** + **Okabe-Ito colorblind-friendly palette**:
-- High data-ink ratio (no chartjunk)
-- Direct labeling on data
-- Insight-driven titles
+1. **Yozma-style program**: €100M fund-of-funds requiring international VC partners
+2. **Dutch SEIS**: 30-50% tax relief on seed investments (mirrors UK model)
+3. **SBIC-style leverage**: Government-guaranteed loans to multiply private capital
 
 ### How to Run
 
@@ -62,32 +56,29 @@ cd task-1-analysis
 jupyter notebook analysis.ipynb
 ```
 
-### Exploratory Analysis (Bonus)
+---
 
-See [legacy/task-1-analysis/](legacy/task-1-analysis/) for:
-- Full funding funnel for **all 38 countries** (Seed→A→B→C→D)
-- Country ranking heatmaps
-- Survival curve analysis
-- McKinsey frameworks
+## Task 2: Data Engineering
+
+### Deliverables
+
+| File | Description |
+|------|-------------|
+| [design-doc.md](task-2-design/design-doc.md) | Data model design with trade-offs |
+| [data-model.png](task-2-design/data-model.png) | Visual diagram |
+
+### Approach
+
+- **Star schema** with SCD Type 2 on `dim_company`
+- **Separate funding tables**: `fact_funding_round` + `fact_funding_participation` (preserves round as single event)
+- **Stack**: BigQuery/Snowflake + dbt + dbt Cloud
 
 ---
 
-## Task 2: Data Engineering (30%)
-
-**Design Doc**: [task-2-design/design-doc.md](task-2-design/design-doc.md)
-
-**Diagram**: [task-2-design/data-model.png](task-2-design/data-model.png)
-
-**Approach**: Star schema (4 tables) with SCD Type 2 on companies.
-
-**Why simple**: Bridge tables add complexity without proportional value for this use case.
-
----
-
-## Tool Choices (20%)
+## Tool Choices
 
 See [tools.md](tools.md) — includes honest AI usage disclosure.
 
 ---
 
-*"A simple solution with clear reasoning beats a complex solution you can't explain."*
+*"A simple solution that works beats a complex solution that doesn't get built."*
