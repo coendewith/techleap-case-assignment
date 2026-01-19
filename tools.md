@@ -6,7 +6,7 @@
 |-----------|------|-----|
 | **Initial Exploration** | Google Sheets | Data was <50K rows, so I could quickly identify data cleaning issues and get an overall picture of the data structure and types |
 | **Analysis** | Python + Pandas | High versatility and customization, quick for code generation, and the language I'm most comfortable with |
-| **Notebook** | Jupyter | Shows work step-by-step, reproducible |
+| **Notebook** | Jupyter | Reproducibility (run cells top-to-bottom, same results), narrative flow (interleave code, output, and explanation), and easy to review—unlike scripts where you'd need to run code and read comments separately |
 | **Visualization** | Matplotlib | Publication-quality static charts, fine-grained control over styling |
 | **IDE** | VS Code + Claude Code (Claude Opus 4.5) | Claude Opus is currently the best-scoring model for agentic coding on livebench.ai |
 | **Design Tasks** | Gemini 2.5 Pro | For design-related tasks, high-thinking models outperform on visual/layout decisions |
