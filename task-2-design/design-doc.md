@@ -113,7 +113,7 @@ When Dealroom sends updated data:
 
 For patents, scientific publications, and news articles, I would create dedicated tables:
 
-### dim_patents
+### fact_patent
 
 | Column | Type | Description |
 |--------|------|-------------|
@@ -122,8 +122,7 @@ For patents, scientific publications, and news articles, I would create dedicate
 | patent_office | varchar | USPTO, EPO, etc. |
 | patent_date | date | Filing/grant date |
 | is_pending | boolean | Pending vs granted |
-| updated_at | timestamp | Last update |
-| is_current | boolean | For tracking changes |
+| granted_at | date | When granted (NULL if pending) |
 
 ### fact_news_articles
 
@@ -204,14 +203,13 @@ Table fact_funding_participation {
 }
 
 // Additional data sources
-Table dim_patents {
+Table fact_patent {
   patent_uuid varchar [pk]
   company_uuid varchar [ref: > dim_company.company_uuid]
   patent_office varchar
   patent_date date
   is_pending boolean
-  updated_at timestamp
-  is_current boolean
+  granted_at date
 }
 
 Table fact_news_articles {
@@ -265,16 +263,69 @@ For SCD Type 2, I'd use dbt's `snapshot` feature with `updated_at` as the strate
 
 No custom stored procedures needed.
 
+### Deduplication
+
+Investor names often appear with variations ("Peak Capital" vs "peak capital" vs "Peak Capital B.V."). I'd handle this in two stages:
+
+1. **Within-batch deduplication**: Use `ROW_NUMBER()` to keep one record per company when duplicates appear in the same daily load:
+
+```sql
+-- stg_companies.sql
+WITH ranked AS (
+  SELECT *,
+    ROW_NUMBER() OVER (
+      PARTITION BY company_id
+      ORDER BY updated_at DESC
+    ) AS rn
+  FROM raw_companies
+  WHERE _loaded_at = CURRENT_DATE
+)
+SELECT * FROM ranked WHERE rn = 1
+```
+
+2. **Entity resolution for investors**: Normalize names in staging (`LOWER()`, `TRIM()`, strip suffixes like "B.V."), then use a seed file or lookup table to map variations to a canonical `investor_uuid`.
+
 ### Data quality
 
-Handled in the staging layer:
+dbt tests enforce constraints declaratively. Example `schema.yml`:
+
+```yaml
+models:
+  - name: dim_company
+    columns:
+      - name: company_uuid
+        tests:
+          - unique
+          - not_null
+      - name: founding_date
+        tests:
+          - not_null
+      - name: employee_count
+        tests:
+          - dbt_utils.accepted_range:
+              min_value: 0
+              max_value: 1000000
+
+  - name: fact_funding_round
+    columns:
+      - name: amount_eur
+        tests:
+          - dbt_utils.accepted_range:
+              min_value: 0
+      - name: funding_type
+        tests:
+          - accepted_values:
+              values: ['seed', 'series-a', 'series-b', 'series-c', 'series-d', 'grant', 'debt']
+```
+
+Additional staging-layer checks:
 
 | Check | Action |
 |-------|--------|
 | `company_id IS NULL` | Reject row |
-| `employee_count > 10,000,000` | Set to NULL (clearly wrong) |
+| `employee_count > 1,000,000` | Set to NULL (clearly wrong) |
 | `funding_amount < 0` | Set to NULL |
-| Duplicate `company_id` in same batch | Keep latest by `updated_at` |
+| Duplicate `company_id` in same batch | Keep latest by `updated_at` via `ROW_NUMBER()` |
 
 ### What I'd skip
 
