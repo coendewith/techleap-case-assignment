@@ -284,6 +284,8 @@ SELECT * FROM ranked WHERE rn = 1
 
 2. **Matching investor names**: Clean up names in staging (`LOWER()`, `TRIM()`, strip suffixes like "B.V."), then use a lookup table to map variations like "Peak Capital" and "peak capital B.V." to the same `investor_uuid`.
 
+3. If clean up names does not fix the core issue I would explore govermnent registration databases to find company registration IDs to use as common identifier
+
 ### Data quality
 
 dbt tests check data quality automatically. Example `schema.yml`:
