@@ -26,8 +26,10 @@ The bottleneck is Seed→A, not seed availability.
 | Metric | Netherlands | EU Peers | USA | Israel |
 |--------|-------------|----------|-----|--------|
 | Failure Rate | 4.3% | 5.5% | 5.1% | 7.0% |
-| Median Funding | $0.3M | $1.0M | $1.6M | $2.8M |
+| Median Funding* | $1.0M | $1.7M | $2.7M | $3.9M |
 | Exit Rate | 4.3% | 5.4% | 8.9% | 8.5% |
+
+*Median funding includes only companies with funding data (>$0).
 
 Low failure + low funding + low exits = playing it small.
 
