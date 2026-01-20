@@ -8,12 +8,12 @@
 
 ## Finding 1: Dutch startups drop off before they can scale
 
-| Region | Seed → A | A → B | B → C |
-|--------|----------|-------|-------|
-| Netherlands | 6.2% | 22.9% | 13.6% |
-| EU Peers | 9.0% | 23.9% | 18.6% |
-| USA | 15.8% | 37.7% | 35.2% |
-| Israel | 21.4% | 32.9% | 24.1% |
+| Region | Seed → A | A → B | B → C | C → D |
+|--------|----------|-------|-------|-------|
+| Netherlands | 6.2% | 22.9% | 13.6% | 16.7% |
+| EU Peers | 9.0% | 23.9% | 18.6% | 19.6% |
+| USA | 15.8% | 37.7% | 35.2% | 32.2% |
+| Israel | 21.4% | 32.9% | 24.1% | 28.6% |
 
 The bottleneck is Seed→A, not seed availability.
 
