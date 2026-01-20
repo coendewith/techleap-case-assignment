@@ -10,10 +10,10 @@
 
 | Region | Seed → A | A → B | B → C |
 |--------|----------|-------|-------|
-| Netherlands | 6.2% | 34.3% | 25.0% |
-| EU Peers | 9.2% | 38.1% | 33.3% |
-| USA | 16.1% | 42.9% | 41.0% |
-| Israel | 21.9% | 40.0% | 41.7% |
+| Netherlands | 6.2% | 22.9% | 13.6% |
+| EU Peers | 9.0% | 23.9% | 18.6% |
+| USA | 15.8% | 37.7% | 35.2% |
+| Israel | 21.4% | 32.9% | 24.1% |
 
 The bottleneck is Seed→A, not seed availability.
 
@@ -39,7 +39,7 @@ Low failure + low funding + low exits = playing it small.
 
 From NL's 97 Seed-funded companies:
 - **At NL rate (6.2%):** 6 reach Series A
-- **At USA rate (16.1%):** 15 reach Series A (+9)
+- **At USA rate (15.8%):** 15 reach Series A (+9)
 
 ~9 potential scale-ups lost per year.
 
